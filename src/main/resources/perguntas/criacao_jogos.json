@@ -1,0 +1,142 @@
+[
+  {
+    "pergunta": "Qual é a primeira etapa no desenvolvimento de um jogo digital?",
+    "0": "Definição do conceito e planejamento.",
+    "1": "Modelagem 3D dos personagens.",
+    "2": "Criação do código-fonte.",
+    "3": "Teste de jogabilidade."
+  },
+  {
+    "pergunta": "O que é um motor gráfico (game engine)?",
+    "0": "Um software que fornece ferramentas para criar e desenvolver jogos.",
+    "1": "Um algoritmo para simular inteligência artificial.",
+    "2": "Uma linguagem de programação específica para jogos.",
+    "3": "Um banco de dados especializado em jogos."
+  },
+  {
+    "pergunta": "Qual é a principal função de um loop de jogo (game loop)?",
+    "0": "Atualizar a lógica e renderizar os frames do jogo continuamente.",
+    "1": "Compilar o código-fonte do jogo.",
+    "2": "Armazenar os dados dos jogadores.",
+    "3": "Criar efeitos visuais e sonoros."
+  },
+  {
+    "pergunta": "O que é um sprite em jogos digitais?",
+    "0": "Uma imagem ou animação utilizada para representar um objeto no jogo.",
+    "1": "Um som ambiente do jogo.",
+    "2": "Um código-fonte específico para movimentação de personagens.",
+    "3": "Uma técnica de otimização gráfica."
+  },
+  {
+    "pergunta": "Qual das seguintes linguagens é comumente usada no desenvolvimento de jogos?",
+    "0": "C#",
+    "1": "HTML",
+    "2": "PHP",
+    "3": "SQL"
+  },
+  {
+    "pergunta": "O que significa FPS em jogos?",
+    "0": "Frames por segundo.",
+    "1": "First Player Shooter.",
+    "2": "Fast Processing System.",
+    "3": "Function Pixel Shader."
+  },
+  {
+    "pergunta": "Qual é a função do motor de física em um jogo?",
+    "0": "Simular interações físicas realistas entre objetos do jogo.",
+    "1": "Gerenciar os eventos sonoros do jogo.",
+    "2": "Criar o layout da interface do usuário.",
+    "3": "Definir o estilo gráfico do jogo."
+  },
+  {
+    "pergunta": "O que é uma hitbox em jogos?",
+    "0": "Uma área invisível que define a colisão de um objeto no jogo.",
+    "1": "Um tipo especial de textura aplicada aos personagens.",
+    "2": "Uma caixa de som utilizada para feedback sonoro.",
+    "3": "Um erro crítico que faz o jogo travar."
+  },
+  {
+    "pergunta": "O que significa NPC em jogos?",
+    "0": "Non-Player Character.",
+    "1": "Next Processing Command.",
+    "2": "New Player Configuration.",
+    "3": "Normal Physics Calculation."
+  },
+  {
+    "pergunta": "O que é um shader em gráficos de jogos?",
+    "0": "Um programa que controla a aparência visual de objetos no jogo.",
+    "1": "Uma ferramenta para compilar código-fonte.",
+    "2": "Um efeito sonoro utilizado para ambientação.",
+    "3": "Uma funcionalidade de detecção de colisão."
+  },
+  {
+    "pergunta": "O que é um level design?",
+    "0": "O processo de criação dos cenários e desafios do jogo.",
+    "1": "O código que controla a movimentação dos personagens.",
+    "2": "Uma ferramenta para criar modelos 3D.",
+    "3": "O planejamento do som ambiente."
+  },
+  {
+    "pergunta": "O que significa AI em jogos digitais?",
+    "0": "Inteligência Artificial.",
+    "1": "Animação Interativa.",
+    "2": "Audio Integration.",
+    "3": "Advanced Input."
+  },
+  {
+    "pergunta": "Qual é a função de um game designer?",
+    "0": "Criar mecânicas e regras de jogabilidade.",
+    "1": "Desenvolver o código do jogo.",
+    "2": "Renderizar os gráficos do jogo.",
+    "3": "Gerenciar o banco de dados do jogo."
+  },
+  {
+    "pergunta": "O que significa VR em jogos?",
+    "0": "Realidade Virtual.",
+    "1": "Visual Rendering.",
+    "2": "Variable Rendering.",
+    "3": "Vector Resolution."
+  },
+  {
+    "pergunta": "O que é um protótipo no desenvolvimento de jogos?",
+    "0": "Uma versão inicial do jogo para testar mecânicas e ideias.",
+    "1": "A última fase do desenvolvimento do jogo.",
+    "2": "Um modelo 3D dos personagens.",
+    "3": "O código-fonte completo do jogo."
+  },
+  {
+    "pergunta": "O que é uma textura em gráficos de jogos?",
+    "0": "Uma imagem aplicada a um modelo 3D para dar aparência realista.",
+    "1": "Um efeito sonoro utilizado em jogos.",
+    "2": "Uma estrutura de dados para armazenar eventos.",
+    "3": "Um modelo de física de colisão."
+  },
+  {
+    "pergunta": "O que significa HUD em jogos?",
+    "0": "Heads-Up Display.",
+    "1": "High User Definition.",
+    "2": "Hidden Utility Device.",
+    "3": "Hyper User Data."
+  },
+  {
+    "pergunta": "Qual das seguintes opções é um motor gráfico popular?",
+    "0": "Unity.",
+    "1": "Eclipse.",
+    "2": "Windows Server.",
+    "3": "Notepad++."
+  },
+  {
+    "pergunta": "O que é um jogo indie?",
+    "0": "Um jogo desenvolvido por estúdios pequenos ou independentes.",
+    "1": "Um jogo feito exclusivamente para consoles.",
+    "2": "Um jogo baseado em franquias populares.",
+    "3": "Um jogo gratuito sem fins lucrativos."
+  },
+  {
+    "pergunta": "O que significa DLC em jogos?",
+    "0": "Conteúdo adicional que pode ser baixado para um jogo.",
+    "1": "Uma ferramenta para depuração de código de jogos.",
+    "2": "Um sistema de login para múltiplos jogadores.",
+    "3": "Uma interface gráfica para jogos."
+  }
+]

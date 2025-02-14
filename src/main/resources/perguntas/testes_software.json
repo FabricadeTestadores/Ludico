@@ -1,0 +1,142 @@
+[
+  {
+    "pergunta": "O que é teste de software?",
+    "0": "Um processo para verificar se um software atende aos requisitos especificados.",
+    "1": "A execução de um programa sem propósito específico.",
+    "2": "Um método para desenvolver software mais rápido.",
+    "3": "A criação de novos softwares para substituir os antigos."
+  },
+  {
+    "pergunta": "Qual é o principal objetivo do teste de software?",
+    "0": "Garantir que o software funcione conforme esperado.",
+    "1": "Eliminar todos os bugs de um sistema.",
+    "2": "Aumentar o tempo de desenvolvimento.",
+    "3": "Substituir a equipe de desenvolvimento."
+  },
+  {
+    "pergunta": "O que é um caso de teste?",
+    "0": "Um conjunto de condições usadas para verificar o funcionamento de um sistema.",
+    "1": "Um erro identificado em um software.",
+    "2": "Uma etapa do processo de desenvolvimento.",
+    "3": "Um relatório de falhas encontradas no sistema."
+  },
+  {
+    "pergunta": "O que é um bug em um software?",
+    "0": "Um defeito ou falha que faz com que o software se comporte de maneira inesperada.",
+    "1": "Uma funcionalidade nova do software.",
+    "2": "Uma melhoria planejada no sistema.",
+    "3": "Um usuário que não consegue usar o sistema corretamente."
+  },
+  {
+    "pergunta": "O que é um teste de regressão?",
+    "0": "Um teste para verificar se mudanças no código não introduziram novos defeitos.",
+    "1": "Um teste realizado apenas antes do lançamento do software.",
+    "2": "Um método de desenvolvimento de software.",
+    "3": "Um teste para verificar a segurança do software."
+  },
+  {
+    "pergunta": "O que é um teste unitário?",
+    "0": "Um teste que verifica pequenas partes do código de forma isolada.",
+    "1": "Um teste que avalia a interface do usuário.",
+    "2": "Um teste para verificar a segurança do sistema.",
+    "3": "Um teste que valida a comunicação entre múltiplos sistemas."
+  },
+  {
+    "pergunta": "O que é um teste de integração?",
+    "0": "Um teste que verifica a interação entre diferentes módulos de um sistema.",
+    "1": "Um teste realizado por usuários finais.",
+    "2": "Um teste que avalia apenas a interface gráfica.",
+    "3": "Um teste para medir o desempenho do software."
+  },
+  {
+    "pergunta": "O que é um teste de caixa-preta?",
+    "0": "Um teste baseado nas entradas e saídas do sistema, sem conhecimento do código interno.",
+    "1": "Um teste realizado apenas pelo desenvolvedor.",
+    "2": "Um teste que verifica exclusivamente o código-fonte.",
+    "3": "Um teste que mede a performance do software."
+  },
+  {
+    "pergunta": "O que é um teste de caixa-branca?",
+    "0": "Um teste baseado na análise do código-fonte do software.",
+    "1": "Um teste realizado sem qualquer conhecimento técnico.",
+    "2": "Um teste conduzido exclusivamente por usuários finais.",
+    "3": "Um teste para verificar a interface do usuário."
+  },
+  {
+    "pergunta": "O que é um teste de aceitação?",
+    "0": "Um teste realizado para validar se o software atende aos requisitos do cliente.",
+    "1": "Um teste realizado apenas pelo time de desenvolvimento.",
+    "2": "Um teste que se concentra apenas na segurança do sistema.",
+    "3": "Um teste para verificar a velocidade do software."
+  },
+  {
+    "pergunta": "O que é um ambiente de teste?",
+    "0": "Um ambiente configurado para executar e validar testes de software.",
+    "1": "O ambiente onde o software é executado em produção.",
+    "2": "Uma ferramenta usada para escrever código-fonte.",
+    "3": "Uma etapa do desenvolvimento de software."
+  },
+  {
+    "pergunta": "O que é um teste de carga?",
+    "0": "Um teste que avalia o desempenho do software sob diferentes níveis de uso.",
+    "1": "Um teste focado apenas na segurança do sistema.",
+    "2": "Um teste para validar a interface gráfica.",
+    "3": "Um teste realizado apenas no final do desenvolvimento."
+  },
+  {
+    "pergunta": "O que é um teste de estresse?",
+    "0": "Um teste que avalia o desempenho do software sob condições extremas.",
+    "1": "Um teste que verifica a compatibilidade do software com diferentes dispositivos.",
+    "2": "Um teste realizado apenas pelo usuário final.",
+    "3": "Um teste para medir a velocidade do software."
+  },
+  {
+    "pergunta": "O que é automação de testes?",
+    "0": "O uso de ferramentas para executar testes de software automaticamente.",
+    "1": "Um método de desenvolvimento de software.",
+    "2": "Um teste manual realizado pelos desenvolvedores.",
+    "3": "Uma estratégia para eliminar todos os bugs do software."
+  },
+  {
+    "pergunta": "O que é um teste exploratório?",
+    "0": "Um teste onde o testador explora o software sem seguir um roteiro pré-definido.",
+    "1": "Um teste realizado exclusivamente por ferramentas automatizadas.",
+    "2": "Um teste que verifica apenas a interface gráfica.",
+    "3": "Um teste feito apenas no final do desenvolvimento."
+  },
+  {
+    "pergunta": "O que é um teste funcional?",
+    "0": "Um teste que verifica se o software atende aos requisitos funcionais especificados.",
+    "1": "Um teste que avalia apenas a aparência do software.",
+    "2": "Um teste voltado apenas para a performance do sistema.",
+    "3": "Um teste realizado apenas pelos desenvolvedores."
+  },
+  {
+    "pergunta": "O que é um teste de usabilidade?",
+    "0": "Um teste que avalia a facilidade de uso do software para os usuários.",
+    "1": "Um teste que verifica apenas o desempenho do software.",
+    "2": "Um teste que avalia a segurança do sistema.",
+    "3": "Um teste realizado apenas por desenvolvedores."
+  },
+  {
+    "pergunta": "O que é um teste de compatibilidade?",
+    "0": "Um teste que verifica se o software funciona em diferentes dispositivos e ambientes.",
+    "1": "Um teste que mede apenas a velocidade do software.",
+    "2": "Um teste que avalia a aparência do software.",
+    "3": "Um teste para verificar se o software está seguro contra ataques."
+  },
+  {
+    "pergunta": "O que é um teste alfa?",
+    "0": "Um teste inicial realizado pelos desenvolvedores antes do lançamento do software.",
+    "1": "Um teste realizado pelos usuários finais antes do lançamento.",
+    "2": "Um teste que avalia apenas a interface gráfica.",
+    "3": "Um teste focado apenas na segurança do software."
+  },
+  {
+    "pergunta": "O que é um teste beta?",
+    "0": "Um teste realizado por usuários reais antes do lançamento oficial do software.",
+    "1": "Um teste realizado apenas dentro do time de desenvolvimento.",
+    "2": "Um teste que verifica apenas a performance do software.",
+    "3": "Um teste que avalia apenas a aparência do sistema."
+  }
+]

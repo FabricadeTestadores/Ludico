@@ -1,0 +1,142 @@
+[
+  {
+    "pergunta": "O que é encapsulamento em POO?",
+    "0": "A prática de esconder detalhes da implementação e expor apenas o necessário.",
+    "1": "O ato de criar múltiplas classes com o mesmo nome.",
+    "2": "O processo de herdar métodos de uma classe para outra.",
+    "3": "O uso de funções privadas para impedir acesso externo."
+  },
+  {
+    "pergunta": "Qual palavra-chave define uma classe em Java?",
+    "0": "class",
+    "1": "Class",
+    "2": "define",
+    "3": "struct"
+  },
+  {
+    "pergunta": "O que é polimorfismo?",
+    "0": "A capacidade de um método ter diferentes comportamentos dependendo do objeto.",
+    "1": "A criação de várias classes com atributos idênticos.",
+    "2": "A execução de múltiplos construtores ao mesmo tempo.",
+    "3": "A substituição de atributos de uma classe pai em uma classe filha."
+  },
+  {
+    "pergunta": "O que é uma classe abstrata?",
+    "0": "Uma classe que não pode ser instanciada e serve como modelo para outras classes.",
+    "1": "Uma classe que pode ser instanciada diretamente.",
+    "2": "Uma classe que não pode conter métodos abstratos.",
+    "3": "Uma classe sem atributos ou métodos."
+  },
+  {
+    "pergunta": "O que acontece quando um método é declarado como 'final' em Java?",
+    "0": "Ele não pode ser sobrescrito por subclasses.",
+    "1": "Ele pode ser sobrescrito apenas uma vez.",
+    "2": "Ele se torna privado automaticamente.",
+    "3": "Ele pode ser sobrescrito por qualquer classe."
+  },
+  {
+    "pergunta": "Qual é a principal diferença entre uma interface e uma classe abstrata?",
+    "0": "Interfaces não podem ter implementação de métodos, enquanto classes abstratas podem.",
+    "1": "Classes abstratas não podem ter métodos abstratos.",
+    "2": "Interfaces podem ser instanciadas diretamente.",
+    "3": "Classes abstratas não podem ser herdadas."
+  },
+  {
+    "pergunta": "O que é um construtor em POO?",
+    "0": "Um método especial usado para inicializar objetos.",
+    "1": "Uma função usada para destruir objetos.",
+    "2": "Um tipo de variável que armazena referências de objetos.",
+    "3": "Uma classe responsável por criar outras classes."
+  },
+  {
+    "pergunta": "O que significa herança em POO?",
+    "0": "Um mecanismo onde uma classe herda atributos e métodos de outra.",
+    "1": "A capacidade de criar várias classes com o mesmo nome.",
+    "2": "O uso de métodos privados em uma classe base.",
+    "3": "A exclusão de atributos em classes derivadas."
+  },
+  {
+    "pergunta": "Qual palavra-chave é usada para herdar uma classe em Java?",
+    "0": "extends",
+    "1": "inherit",
+    "2": "implements",
+    "3": "derive"
+  },
+  {
+    "pergunta": "O que a palavra-chave 'static' faz em um método?",
+    "0": "Permite que o método seja chamado sem instanciar a classe.",
+    "1": "Impede que o método seja sobrescrito.",
+    "2": "Torna o método público automaticamente.",
+    "3": "Permite que o método altere atributos privados."
+  },
+  {
+    "pergunta": "O que significa sobrecarga de métodos?",
+    "0": "Criar múltiplos métodos com o mesmo nome, mas assinaturas diferentes.",
+    "1": "Substituir um método da classe pai na classe filha.",
+    "2": "Ter dois métodos idênticos na mesma classe.",
+    "3": "Criar métodos com o mesmo nome e assinatura."
+  },
+  {
+    "pergunta": "Qual o modificador de acesso mais restritivo em Java?",
+    "0": "private",
+    "1": "protected",
+    "2": "default",
+    "3": "public"
+  },
+  {
+    "pergunta": "Qual é a principal característica de um objeto em POO?",
+    "0": "Ele possui estado e comportamento.",
+    "1": "Ele é sempre público.",
+    "2": "Ele pode ser criado sem uma classe.",
+    "3": "Ele não pode ser modificado após a criação."
+  },
+  {
+    "pergunta": "O que é uma interface em Java?",
+    "0": "Um contrato que define um conjunto de métodos que devem ser implementados.",
+    "1": "Uma classe base para todas as classes abstratas.",
+    "2": "Um tipo especial de enumeração.",
+    "3": "Um método que só pode ser chamado uma vez."
+  },
+  {
+    "pergunta": "O que acontece quando um método é sobrescrito?",
+    "0": "A versão do método na classe filha substitui a versão da classe pai.",
+    "1": "O método original da classe pai é apagado.",
+    "2": "Ambas as versões do método são executadas simultaneamente.",
+    "3": "A versão original do método é mantida e não pode ser alterada."
+  },
+  {
+    "pergunta": "O que a anotação @Override faz?",
+    "0": "Indica que um método sobrescreve um método da superclasse.",
+    "1": "Impede que um método seja sobrescrito.",
+    "2": "Cria um novo método estático.",
+    "3": "Torna um método privado."
+  },
+  {
+    "pergunta": "O que significa associação em POO?",
+    "0": "Uma relação entre duas classes onde uma depende da outra.",
+    "1": "O uso de interfaces para estender funcionalidades.",
+    "2": "A herança de métodos entre classes abstratas.",
+    "3": "A criação de múltiplas instâncias da mesma classe."
+  },
+  {
+    "pergunta": "O que é uma composição em POO?",
+    "0": "Uma relação forte onde um objeto contém outro objeto.",
+    "1": "A habilidade de uma classe herdar múltiplos métodos.",
+    "2": "A criação de classes abstratas.",
+    "3": "O uso de herança múltipla em Java."
+  },
+  {
+    "pergunta": "Qual estrutura de POO permite reutilização de código?",
+    "0": "Herança",
+    "1": "Composição",
+    "2": "Encapsulamento",
+    "3": "Polimorfismo"
+  },
+  {
+    "pergunta": "O que a palavra-chave 'super' faz em Java?",
+    "0": "Chama um método ou construtor da superclasse.",
+    "1": "Declara uma variável global.",
+    "2": "Impede a sobrescrita de um método.",
+    "3": "Cria um objeto estático."
+  }
+]

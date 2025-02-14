@@ -1,0 +1,142 @@
+[
+  {
+    "pergunta": "O que é um banco de dados?",
+    "0": "Uma coleção organizada de dados armazenados e acessados eletronicamente.",
+    "1": "Um software para criar gráficos e relatórios.",
+    "2": "Um sistema para armazenar apenas arquivos de texto.",
+    "3": "Uma estrutura usada apenas para backup de arquivos."
+  },
+  {
+    "pergunta": "Qual das opções abaixo é um banco de dados relacional?",
+    "0": "MySQL",
+    "1": "MongoDB",
+    "2": "Redis",
+    "3": "Cassandra"
+  },
+  {
+    "pergunta": "O que significa SQL?",
+    "0": "Structured Query Language",
+    "1": "Systematic Query Logic",
+    "2": "Simple Query Language",
+    "3": "Standardized Quick Lookup"
+  },
+  {
+    "pergunta": "Qual comando SQL é usado para recuperar dados de um banco?",
+    "0": "SELECT",
+    "1": "INSERT",
+    "2": "UPDATE",
+    "3": "DELETE"
+  },
+  {
+    "pergunta": "O que é normalização em banco de dados?",
+    "0": "O processo de organizar os dados para reduzir redundâncias.",
+    "1": "A criação de índices para otimizar buscas.",
+    "2": "O uso de stored procedures para padronizar consultas.",
+    "3": "A replicação de dados entre tabelas diferentes."
+  },
+  {
+    "pergunta": "Qual é a função da chave primária em um banco de dados?",
+    "0": "Identificar unicamente cada registro em uma tabela.",
+    "1": "Criar um índice de busca automática.",
+    "2": "Armazenar apenas valores nulos.",
+    "3": "Permitir relacionamentos entre bancos diferentes."
+  },
+  {
+    "pergunta": "O que é um banco de dados NoSQL?",
+    "0": "Um banco de dados que não usa tabelas relacionais.",
+    "1": "Um banco de dados exclusivo para SQL.",
+    "2": "Um banco de dados somente de leitura.",
+    "3": "Um banco de dados usado apenas para transações bancárias."
+  },
+  {
+    "pergunta": "Qual é um exemplo de banco de dados NoSQL?",
+    "0": "MongoDB",
+    "1": "PostgreSQL",
+    "2": "Oracle",
+    "3": "SQLite"
+  },
+  {
+    "pergunta": "O que faz o comando SQL 'DELETE'?",
+    "0": "Remove registros de uma tabela.",
+    "1": "Apaga completamente uma tabela do banco.",
+    "2": "Desfaz a última transação realizada.",
+    "3": "Cria um backup dos dados."
+  },
+  {
+    "pergunta": "Qual comando SQL é usado para adicionar um novo registro?",
+    "0": "INSERT",
+    "1": "UPDATE",
+    "2": "SELECT",
+    "3": "DELETE"
+  },
+  {
+    "pergunta": "O que é um índice em banco de dados?",
+    "0": "Uma estrutura usada para acelerar buscas em tabelas.",
+    "1": "Uma chave estrangeira entre duas tabelas.",
+    "2": "Um tipo de tabela temporária.",
+    "3": "Um backup de dados primários."
+  },
+  {
+    "pergunta": "O que a cláusula 'WHERE' faz em SQL?",
+    "0": "Filtra os registros que atendem a uma condição específica.",
+    "1": "Ordena os registros de forma crescente.",
+    "2": "Agrupa registros idênticos.",
+    "3": "Cria um novo índice para uma tabela."
+  },
+  {
+    "pergunta": "Qual é a diferença entre 'INNER JOIN' e 'LEFT JOIN'?",
+    "0": "'INNER JOIN' retorna apenas registros correspondentes, enquanto 'LEFT JOIN' retorna todos os registros da tabela esquerda.",
+    "1": "'INNER JOIN' sempre retorna mais resultados que 'LEFT JOIN'.",
+    "2": "'LEFT JOIN' remove registros duplicados automaticamente.",
+    "3": "'INNER JOIN' exclui registros que não possuem correspondência."
+  },
+  {
+    "pergunta": "O que é uma transação em banco de dados?",
+    "0": "Um conjunto de operações que devem ser executadas integralmente ou não ser executadas.",
+    "1": "Um processo de backup automático do banco.",
+    "2": "Uma otimização para acelerar consultas.",
+    "3": "Um comando SQL que remove registros antigos."
+  },
+  {
+    "pergunta": "O que significa ACID em banco de dados?",
+    "0": "Atomicidade, Consistência, Isolamento e Durabilidade.",
+    "1": "Acelerador de Consultas e Índices Distribuídos.",
+    "2": "Atributos Combinados e Integridade de Dados.",
+    "3": "Autenticação, Criptografia, Integridade e Desempenho."
+  },
+  {
+    "pergunta": "O que faz o comando SQL 'UPDATE'?",
+    "0": "Modifica registros existentes em uma tabela.",
+    "1": "Adiciona um novo campo a uma tabela.",
+    "2": "Remove um índice de uma tabela.",
+    "3": "Cria uma nova tabela no banco."
+  },
+  {
+    "pergunta": "Qual dos seguintes é um SGBD?",
+    "0": "PostgreSQL",
+    "1": "Python",
+    "2": "HTML",
+    "3": "CSS"
+  },
+  {
+    "pergunta": "Qual é a função da chave estrangeira?",
+    "0": "Criar um relacionamento entre tabelas.",
+    "1": "Eliminar registros duplicados automaticamente.",
+    "2": "Acelerar buscas no banco.",
+    "3": "Definir um identificador único para a tabela."
+  },
+  {
+    "pergunta": "O que a cláusula 'GROUP BY' faz em SQL?",
+    "0": "Agrupa registros com valores semelhantes em colunas específicas.",
+    "1": "Ordena registros de forma crescente.",
+    "2": "Filtra registros duplicados automaticamente.",
+    "3": "Exclui registros sem correspondência."
+  },
+  {
+    "pergunta": "O que significa 'DDL' em banco de dados?",
+    "0": "Data Definition Language",
+    "1": "Database Distributed Logic",
+    "2": "Dynamic Data List",
+    "3": "Direct Data Load"
+  }
+]

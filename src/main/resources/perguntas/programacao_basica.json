@@ -1,0 +1,142 @@
+[
+  {
+    "pergunta": "Qual estrutura é usada para repetir um bloco de código várias vezes?",
+    "0": "Loop",
+    "1": "Condição",
+    "2": "Função",
+    "3": "Array"
+  },
+  {
+    "pergunta": "Qual dos seguintes é um tipo de dado numérico?",
+    "0": "int",
+    "1": "bool",
+    "2": "char",
+    "3": "string"
+  },
+  {
+    "pergunta": "Qual símbolo é usado para indicar um comentário de linha única?",
+    "0": "//",
+    "1": "/* */",
+    "2": "#",
+    "3": "--"
+  },
+  {
+    "pergunta": "Qual estrutura de controle é usada para tomar decisões no código?",
+    "0": "if",
+    "1": "loop",
+    "2": "switch",
+    "3": "return"
+  },
+  {
+    "pergunta": "Qual operador é usado para comparação de igualdade?",
+    "0": "==",
+    "1": "=",
+    "2": "!=",
+    "3": "<>"
+  },
+  {
+    "pergunta": "O que uma variável faz em um programa?",
+    "0": "Armazena um valor",
+    "1": "Executa um bloco de código",
+    "2": "Cria uma nova função",
+    "3": "Fecha o programa"
+  },
+  {
+    "pergunta": "Qual operador lógico representa 'E'?",
+    "0": "&&",
+    "1": "||",
+    "2": "!",
+    "3": "??"
+  },
+  {
+    "pergunta": "O que uma função faz?",
+    "0": "Agrupa código reutilizável",
+    "1": "Declara uma variável",
+    "2": "Cria um loop",
+    "3": "Fecha um programa"
+  },
+  {
+    "pergunta": "Qual palavra-chave é usada para retornar um valor de uma função?",
+    "0": "return",
+    "1": "break",
+    "2": "continue",
+    "3": "yield"
+  },
+  {
+    "pergunta": "O que um array armazena?",
+    "0": "Múltiplos valores do mesmo tipo",
+    "1": "Apenas um valor",
+    "2": "Somente caracteres",
+    "3": "Somente números"
+  },
+  {
+    "pergunta": "O que acontece se um loop não tiver uma condição de parada?",
+    "0": "Ele entra em loop infinito",
+    "1": "Ele roda apenas uma vez",
+    "2": "Ele não compila",
+    "3": "Ele causa um erro de sintaxe"
+  },
+  {
+    "pergunta": "Qual estrutura é usada para armazenar pares chave-valor?",
+    "0": "Dicionário",
+    "1": "Lista",
+    "2": "Array",
+    "3": "Stack"
+  },
+  {
+    "pergunta": "O que significa depuração (debugging)?",
+    "0": "Encontrar e corrigir erros no código",
+    "1": "Executar um programa",
+    "2": "Criar novas funções",
+    "3": "Organizar arquivos"
+  },
+  {
+    "pergunta": "O que é um bug?",
+    "0": "Um erro no código",
+    "1": "Um novo recurso",
+    "2": "Um comentário no código",
+    "3": "Uma variável não usada"
+  },
+  {
+    "pergunta": "O que significa a sigla IDE?",
+    "0": "Integrated Development Environment",
+    "1": "Interactive Debugging Engine",
+    "2": "Intelligent Data Execution",
+    "3": "Internet Development Extension"
+  },
+  {
+    "pergunta": "Qual operador é usado para acessar um elemento de um array?",
+    "0": "[]",
+    "1": "{}",
+    "2": "()",
+    "3": "<>"
+  },
+  {
+    "pergunta": "Qual dos seguintes caracteres é usado para encerrar uma instrução na maioria das linguagens?",
+    "0": ";",
+    "1": ":",
+    "2": ",",
+    "3": "."
+  },
+  {
+    "pergunta": "O que acontece se tentarmos acessar um índice inexistente de um array?",
+    "0": "Erro de tempo de execução",
+    "1": "O programa ignora a operação",
+    "2": "O valor retornado será sempre 0",
+    "3": "O código compila normalmente sem erro"
+  },
+  {
+    "pergunta": "Qual é a finalidade do operador de atribuição '='?",
+    "0": "Atribuir um valor a uma variável",
+    "1": "Comparar dois valores",
+    "2": "Incrementar um valor",
+    "3": "Declarar uma função"
+  },
+  {
+    "pergunta": "O que acontece quando um programa executa a instrução 'break' dentro de um loop?",
+    "0": "O loop é interrompido imediatamente",
+    "1": "O programa encerra completamente",
+    "2": "O código dentro do loop continua até o final",
+    "3": "O loop reinicia desde o começo"
+  }
+]

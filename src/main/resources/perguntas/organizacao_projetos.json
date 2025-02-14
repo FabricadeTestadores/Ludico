@@ -1,0 +1,142 @@
+[
+  {
+    "pergunta": "O que é um ciclo de vida de desenvolvimento de software?",
+    "0": "O conjunto de fases que um software percorre desde sua concepção até sua descontinuação.",
+    "1": "O tempo total necessário para desenvolver um software.",
+    "2": "Um modelo exclusivo para desenvolvimento ágil.",
+    "3": "A fase final do desenvolvimento de software."
+  },
+  {
+    "pergunta": "Qual das seguintes opções é uma metodologia ágil?",
+    "0": "Scrum",
+    "1": "Waterfall",
+    "2": "V-Model",
+    "3": "RAD"
+  },
+  {
+    "pergunta": "O que é um backlog em Scrum?",
+    "0": "Uma lista priorizada de tarefas e funcionalidades a serem implementadas.",
+    "1": "Um documento que define as regras de negócio do projeto.",
+    "2": "Um relatório de erros encontrados durante o desenvolvimento.",
+    "3": "O tempo total necessário para concluir um sprint."
+  },
+  {
+    "pergunta": "Qual é o principal objetivo da fase de levantamento de requisitos?",
+    "0": "Entender e documentar as necessidades do usuário e do sistema.",
+    "1": "Codificar todas as funcionalidades do software.",
+    "2": "Executar testes de aceitação com o cliente.",
+    "3": "Criar a interface gráfica do software."
+  },
+  {
+    "pergunta": "O que é um MVP (Minimum Viable Product)?",
+    "0": "Uma versão mínima de um produto com funcionalidades essenciais para validar a ideia.",
+    "1": "Uma documentação completa do projeto antes da implementação.",
+    "2": "O primeiro protótipo de um software desenvolvido sem testes.",
+    "3": "Uma versão beta de um produto finalizado."
+  },
+  {
+    "pergunta": "Qual é o papel do Product Owner no Scrum?",
+    "0": "Definir e priorizar os itens do backlog do produto.",
+    "1": "Garantir que o código esteja bem estruturado.",
+    "2": "Criar e executar testes unitários.",
+    "3": "Codificar as principais funcionalidades do software."
+  },
+  {
+    "pergunta": "O que é um Sprint no Scrum?",
+    "0": "Um período de tempo fixo no qual uma equipe trabalha para entregar incrementos do produto.",
+    "1": "Uma reunião de planejamento de longo prazo.",
+    "2": "Uma técnica para correção de bugs.",
+    "3": "Um documento com as regras de desenvolvimento do projeto."
+  },
+  {
+    "pergunta": "Qual das seguintes atividades faz parte do planejamento de projetos de software?",
+    "0": "Definição de escopo, cronograma e alocação de recursos.",
+    "1": "Escrita de código e execução de testes unitários.",
+    "2": "Implantação do sistema e monitoramento de erros.",
+    "3": "Somente a criação de diagramas UML."
+  },
+  {
+    "pergunta": "O que é uma retrospectiva no Scrum?",
+    "0": "Uma reunião para revisar o que funcionou e o que pode ser melhorado no sprint anterior.",
+    "1": "Uma análise de código para garantir qualidade.",
+    "2": "Uma apresentação do produto ao cliente.",
+    "3": "Uma reunião para definir novos requisitos do projeto."
+  },
+  {
+    "pergunta": "Qual é o objetivo principal de um roadmap de produto?",
+    "0": "Visualizar a estratégia e evolução do produto ao longo do tempo.",
+    "1": "Criar um documento técnico detalhado do software.",
+    "2": "Definir os diagramas UML do projeto.",
+    "3": "Especificar requisitos funcionais e não funcionais."
+  },
+  {
+    "pergunta": "O que é a metodologia Kanban?",
+    "0": "Uma abordagem visual para gerenciar fluxo de trabalho.",
+    "1": "Um modelo de desenvolvimento sequencial em fases.",
+    "2": "Uma técnica específica para testes de software.",
+    "3": "Uma ferramenta exclusiva para gestão de código-fonte."
+  },
+  {
+    "pergunta": "O que é um diagrama de casos de uso?",
+    "0": "Uma representação gráfica das interações entre usuários e o sistema.",
+    "1": "Um fluxograma de execução de código.",
+    "2": "Uma tabela que detalha requisitos técnicos.",
+    "3": "Um modelo matemático de estrutura de dados."
+  },
+  {
+    "pergunta": "O que é engenharia de requisitos?",
+    "0": "O processo de definir, documentar e manter requisitos do sistema.",
+    "1": "A codificação das principais funcionalidades do software.",
+    "2": "A elaboração de diagramas UML.",
+    "3": "A fase de testes do software."
+  },
+  {
+    "pergunta": "Qual dos seguintes artefatos é produzido na fase de análise de requisitos?",
+    "0": "Documento de requisitos de software.",
+    "1": "Código-fonte do sistema.",
+    "2": "Plano de testes automatizados.",
+    "3": "Manual do usuário final."
+  },
+  {
+    "pergunta": "O que caracteriza a abordagem ágil no desenvolvimento de software?",
+    "0": "Iterações curtas, colaboração constante e adaptação a mudanças.",
+    "1": "Execução sequencial e rígida de fases do projeto.",
+    "2": "Documentação extensiva antes da implementação.",
+    "3": "A entrega de um produto final sem revisões intermediárias."
+  },
+  {
+    "pergunta": "O que significa 'refinamento do backlog' no Scrum?",
+    "0": "Revisar e detalhar os itens do backlog para próximos sprints.",
+    "1": "Excluir tarefas que não foram concluídas no sprint atual.",
+    "2": "Modificar o escopo do projeto sem validação do cliente.",
+    "3": "Reduzir o tamanho do backlog para finalizar o projeto mais rápido."
+  },
+  {
+    "pergunta": "Qual é a função do Scrum Master?",
+    "0": "Facilitar a aplicação do Scrum e remover impedimentos da equipe.",
+    "1": "Escrever código e revisar pull requests.",
+    "2": "Criar e priorizar o backlog do produto.",
+    "3": "Executar testes de qualidade no software."
+  },
+  {
+    "pergunta": "O que significa 'Deploy Contínuo'?",
+    "0": "A prática de disponibilizar novas versões de software automaticamente.",
+    "1": "O uso de testes unitários em todas as fases do projeto.",
+    "2": "A prática de compilar código-fonte a cada commit.",
+    "3": "A entrega de software apenas na fase final do projeto."
+  },
+  {
+    "pergunta": "O que é um pipeline de integração contínua (CI)?",
+    "0": "Um processo automatizado para integrar e testar código frequentemente.",
+    "1": "Uma técnica para planejar sprints no Scrum.",
+    "2": "Um método de versionamento manual de código-fonte.",
+    "3": "Uma ferramenta usada apenas para testes unitários."
+  },
+  {
+    "pergunta": "Qual a principal vantagem da prototipação no desenvolvimento de software?",
+    "0": "Permitir validação precoce de conceitos e requisitos com stakeholders.",
+    "1": "Evitar completamente a necessidade de testes de software.",
+    "2": "Reduzir o tempo de desenvolvimento ao eliminar revisões.",
+    "3": "Criar a versão final do software logo na primeira tentativa."
+  }
+]
