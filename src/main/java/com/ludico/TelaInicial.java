@@ -16,6 +16,7 @@ public class TelaInicial extends Application {
     private float largura = Main.getLargura(), altura = Main.getAltura();
     private String cor_inicial;
     private String[] topicos;
+    private Jogador[] jogs;
 
     public void start(Stage stage) {
         String[] topicos = {"POO", "Banco de Dados", "Programação Básica",
@@ -108,8 +109,10 @@ public class TelaInicial extends Application {
 
         confirmar.setOnAction(e -> {
             cor_inicial = comboBoxCores.getValue().toLowerCase();
+            organizarTopicos();
+            gerarJogadores();
             stage.close();
-            Main.iniciarJogo(qtd_jogs, cor_inicial, topicos);
+            Main.iniciarJogo(topicos, jogs);
         });
 
         VBox layout = new VBox(largura / 30f);
@@ -123,6 +126,72 @@ public class TelaInicial extends Application {
         stage.setResizable(false);
         stage.setTitle("Escolha a Cor do Primeiro Jogador");
         stage.show();
+    }
+
+    private void organizarTopicos() {
+        for (int i = 0; i < topicos.length; i++) {
+            switch (topicos[i]) {
+                case "POO":
+                    topicos[i] = "poo";
+                    break;
+                case "Banco de Dados":
+                    topicos[i] = "banco_dados";
+                    break;
+                case "Programação Básica":
+                    topicos[i] = "programacao_basica";
+                    break;
+                case "Criação de Jogos":
+                    topicos[i] = "criacao_jogos";
+                    break;
+                case "Testes de Software":
+                    topicos[i] = "testes_software";
+                    break;
+                default:
+                    topicos[i] = "organizacao_projetos";
+            }
+        }
+    }
+
+    private void gerarJogadores() {
+        String[] cores = gerarCores();
+        jogs = new Jogador[qtd_jogs];
+
+        for (int i = 0; i < qtd_jogs; i++) {
+            switch (cores[i]) {
+                case "vermelho":
+                    jogs[i] = new JogadorVermelho();
+                    break;
+                case "verde":
+                    jogs[i] = new JogadorVerde();
+                    break;
+                case "amarelo":
+                    jogs[i] = new JogadorAmarelo();
+                    break;
+                default:
+                    jogs[i] = new JogadorAzul();
+            }
+        }
+    }
+
+    private String[] gerarCores() {
+        int indice = 0;
+        String[] cores = {"vermelho", "verde", "amarelo", "azul"}, aux = new String[qtd_jogs];
+
+        for (int i = 0; i < 4; i++) {
+            if (cor_inicial.equals(cores[i])) {
+                indice = i;
+                break;
+            }
+        }
+
+        for (int i = 0; i < qtd_jogs; i++) {
+            if (qtd_jogs == 2)
+                aux[i] = cores[(2 * i + indice) % 4];
+            else
+                aux[i] = cores[(i + indice) % 4];
+        }
+
+        return aux;
     }
 
     public static void main(String[] args) {
