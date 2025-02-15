@@ -18,6 +18,18 @@ public class Tabuleiro {
         return instancia;
     }
 
+    public void ativarBotaoDado(String cor) {
+        imagens.ativarBotaoDado(cor);
+    }
+
+    public int getValorDado() {
+        return imagens.getValorDado();
+    }
+
+    public boolean getBotaoAtivado() {
+        return imagens.getBotaoAtivado();
+    }
+
     public float[] getXQuadradosPrincipais() {
         return quadrados.getXQuadradosPrincipais();
     }

@@ -1,5 +1,6 @@
 package com.ludico;
 
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -21,17 +22,21 @@ public class Main {
     }
 
     public static void iniciarJogo(String[] topicos, Jogador[] jogs) {
-        Scene scene = new Scene(root, largura, altura);
-        Stage stage = new Stage();
+        Platform.runLater(() -> {
+            Scene scene = new Scene(root, largura, altura);
+            Stage stage = new Stage();
+            TelaPerguntas tela = new TelaPerguntas(topicos);
+            InicioJogo inicio_jogo = new InicioJogo(tela, jogs);
 
-        Tabuleiro.instanciar();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
 
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
+            new Thread(() -> inicio_jogo.comecarLoopPrincipal(stage)).start();
+        });
     }
 
-    public static void finalizarJogo() {
+    public static void finalizarJogo(Jogador jog) {
 
     }
 

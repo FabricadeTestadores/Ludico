@@ -1,17 +1,33 @@
 package com.ludico;
 
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.util.Objects;
+
 public class Imagens {
+    private int valor_dado;
     private float largura = Main.getLargura(), altura = Main.getAltura();
     private Pane root = Main.getRoot();
+    private ImageView img_dado;
+    private Rectangle fundo_dado = new Rectangle();
+    private Button btn_dado = new Button();
+    private Image[] imgs_dados = new Image[6];
 
     public Imagens() {
         colocarPapelParede();
+        colocarDado();
+    }
+
+    private void girarDado() {
+        valor_dado = (int) (Math.random() * 6 + 1);
+        img_dado.setImage(imgs_dados[valor_dado - 1]);
+        btn_dado.setOpacity(0.5f);
+        btn_dado.setDisable(true);
     }
 
     private void colocarPapelParede() {
@@ -75,5 +91,52 @@ public class Imagens {
                 System.err.println("Erro ao carregar a imagem: " + e.getMessage());
             }
         }
+    }
+
+    private void colocarDado() {
+        try {
+            for (int i = 0; i < 6; i++)
+                imgs_dados[i] = new Image(Objects.requireNonNull(getClass().getResource("/imagens/dado" + (i + 1) + ".png"))
+                        .toExternalForm());
+
+            img_dado = new ImageView(imgs_dados[5]);
+            img_dado.setFitWidth(largura / 16f);
+            img_dado.setFitHeight(largura / 16f);
+            img_dado.setLayoutX(largura / 16f);
+            img_dado.setLayoutY(altura * (29f / 64f));
+
+            fundo_dado.setWidth(largura / 16f);
+            fundo_dado.setHeight(largura / 16f);
+            fundo_dado.setStroke(Color.BLACK);
+            fundo_dado.setStrokeWidth(largura / 240f);
+            fundo_dado.setLayoutX(largura / 16f);
+            fundo_dado.setLayoutY(altura * (29f / 64f));
+
+            btn_dado.setPrefSize(largura / 16f, largura / 16f);
+            btn_dado.setLayoutX(largura / 16f);
+            btn_dado.setLayoutY(altura * (29f / 64f));
+            btn_dado.setOpacity(0f);
+            btn_dado.setOnAction(e -> girarDado());
+
+            root.getChildren().addAll(fundo_dado, img_dado, btn_dado);
+        } catch (NullPointerException e) {
+            System.err.println("Erro: Imagem 'dadox.png' não encontrada no classpath.");
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar a imagem: " + e.getMessage());
+        }
+    }
+
+    public void ativarBotaoDado(String cor) {
+        btn_dado.setDisable(false);
+        btn_dado.setOpacity(0f);
+        fundo_dado.setFill(Color.web(cor));
+    }
+
+    public int getValorDado() {
+        return valor_dado;
+    }
+
+    public boolean getBotaoAtivado() {
+        return !btn_dado.isDisable();
     }
 }
