@@ -1,8 +1,10 @@
 package com.ludico;
 
 public abstract class Jogador {
-    protected String cor_clara = definirCorClara(), cor_escura = definirCorEscura();
+    protected String cor = definirCor(), cor_clara = definirCorClara(), cor_escura = definirCorEscura();
     protected Peca[] pecas = gerarPecas();
+
+    protected abstract String definirCor();
 
     protected abstract String definirCorClara();
 
@@ -18,6 +20,14 @@ public abstract class Jogador {
         return false;
     }
 
+    public boolean verificarGanhou() {
+        for (int i = 0; i < 4; i++) {
+            if (!pecas[i].getTipoPosicao().equals("linha_chegada"))
+                return false;
+        }
+        return true;
+    }
+
     public Peca getPecaEscolhida() {
         for (int i = 0; i < 4; i++) {
             if (!pecas[i].getJogadaFinalizada()) {
@@ -31,6 +41,10 @@ public abstract class Jogador {
     public void ativarBotoes(boolean ativar) {
         for (int i = 0; i < 4; i++)
             pecas[i].ativarBotao(ativar);
+    }
+
+    public String getCor() {
+        return cor;
     }
 
     public String getCorClara() {

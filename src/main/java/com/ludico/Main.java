@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main {
-    private static float largura = 800f, altura = largura / 1.5f;
+    private static float largura = 960f, altura = largura / 1.5f;
     private static Pane root = new Pane();
 
     public static float getLargura() {
@@ -27,6 +27,7 @@ public class Main {
             Stage stage = new Stage();
             TelaPerguntas tela = new TelaPerguntas(topicos);
             InicioJogo inicio_jogo = new InicioJogo(tela, jogs);
+            Movimento.instanciar().setJogadores(jogs);
 
             stage.setScene(scene);
             stage.setResizable(false);

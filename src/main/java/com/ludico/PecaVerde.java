@@ -12,5 +12,7 @@ public class PecaVerde extends Peca {
     protected void definirPosicoes() {
         pos_inicial = 15;
         pos_final = 13;
+        x_finais = tabuleiro.getXQuadradosFinais(1);
+        y_finais = tabuleiro.getYQuadradosFinais(1);
     }
 }

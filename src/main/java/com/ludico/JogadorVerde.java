@@ -1,6 +1,9 @@
 package com.ludico;
 
 public class JogadorVerde extends Jogador {
+    protected String definirCor() {
+        return "verde";
+    }
 
     protected String definirCorClara() {
         return "#00FF00";

@@ -39,7 +39,7 @@ public class InicioJogo {
 
             esperar(peca.getTempoEspera());
 
-            if (verificarFinalizarJogo())
+            if (jog.verificarGanhou())
                 break;
 
             verificarJogarNovamente(tabuleiro.getValorDado());
@@ -71,9 +71,5 @@ public class InicioJogo {
             esperar(100);
 
         return peca;
-    }
-
-    private boolean verificarFinalizarJogo() {
-        return false;
     }
 }

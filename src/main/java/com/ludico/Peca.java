@@ -8,8 +8,9 @@ import javafx.scene.layout.Pane;
 public abstract class Peca {
     protected Tabuleiro tabuleiro = Tabuleiro.instanciar();
     protected boolean jogada_finalizada = true, jogar_dnv = false;
-    protected int tempo_espera, pos_inicial, pos_final, pos_atual = pos_inicial;
+    protected int tempo_espera, pos_atual, pos_inicial, pos_final;
     protected float x_base, y_base, largura = Main.getLargura(), altura = Main.getAltura();
+    protected float[] x_finais, y_finais;
     protected Pane root = Main.getRoot();
     protected String tipo_pos = "base", cor = definirCor();
     protected ImageView img;
@@ -72,16 +73,16 @@ public abstract class Peca {
         this.tempo_espera = tempo_espera;
     }
 
+    public int getTempoEspera() {
+        return tempo_espera;
+    }
+
     public void setJogarNovamente(boolean jogar_dnv) {
         this.jogar_dnv = jogar_dnv;
     }
 
     public boolean getJogarNovamente() {
         return jogar_dnv;
-    }
-
-    public int getTempoEspera() {
-        return tempo_espera;
     }
 
     public void setPosicao(int pos_atual) {
@@ -100,6 +101,22 @@ public abstract class Peca {
         return pos_final;
     }
 
+    public float getXBase() {
+        return x_base;
+    }
+
+    public float getYBase() {
+        return y_base;
+    }
+
+    public float getXFinal(int i) {
+        return x_finais[i];
+    }
+
+    public float getYFinal(int i) {
+        return y_finais[i];
+    }
+
     public void setTipoPosicao(String tipo_pos) {
         this.tipo_pos = tipo_pos;
     }
@@ -112,6 +129,8 @@ public abstract class Peca {
         int valor_dado = tabuleiro.getValorDado();
 
         if (tipo_pos.equals("linha_chegada"))
+            return false;
+        else if (tipo_pos.equals("quad_final") && valor_dado + pos_atual > 5)
             return false;
         else if (tipo_pos.equals("base") && valor_dado == 6)
             return true;
@@ -133,5 +152,9 @@ public abstract class Peca {
 
     public Button getBotao() {
         return btn;
+    }
+
+    public String getCor() {
+        return cor;
     }
 }
