@@ -5,11 +5,14 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+import java.util.Objects;
+
 public class Movimento {
     private static Movimento instancia;
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
     private Peca peca;
     private Jogador[] jogs;
+    private TelaPerguntas tela = TelaPerguntas.instanciar(null);
     private float[] x_principais = tabuleiro.getXQuadradosPrincipais(), y_principais = tabuleiro.getYQuadradosPrincipais();
 
     private Movimento() {
@@ -41,13 +44,20 @@ public class Movimento {
 
         int valor_dado = tabuleiro.getValorDado();
         this.peca = peca;
-        this.peca.setJogadaFinalizada(false);
-        this.peca.getImagem().setViewOrder(-1);
+
+        if (!verificarAcertouPergunta(valor_dado)) {
+            InicioJogo.setTempoEspera(500);
+            peca.setJogadaFinalizada(false);
+            return;
+        }
+
+        peca.setJogadaFinalizada(false);
+        peca.getImagem().setViewOrder(-1);
 
         if (peca.getTipoPosicao().equals("base")) {
             sairDaBase();
         } else {
-            peca.setTempoEspera(250 + 500 * valor_dado);
+            InicioJogo.setTempoEspera(250 + 500 * valor_dado);
 
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5f), e -> moverComPulo()));
             timeline.setCycleCount(valor_dado);
@@ -81,7 +91,7 @@ public class Movimento {
         moverImagem(0.5f, dx, dy, img);
         moverBotao(0.5f, dx, dy, btn);
 
-        peca.setTempoEspera(750);
+        InicioJogo.setTempoEspera(750);
         peca.setPosicao(pos_inicial);
         peca.setTipoPosicao("quad_principal");
     }
@@ -137,6 +147,19 @@ public class Movimento {
 
     private void finalizar() {
         Jogador jog = definirJogador();
+        Objects.requireNonNull(jog).mostrarImagemChegada();
         peca.getImagem().setOpacity(0f);
+    }
+
+    private boolean verificarAcertouPergunta(int valor_dado) {
+        int pos = peca.getPosicao();
+        String tipo_pos = peca.getTipoPosicao();
+
+        if (!(tipo_pos.equals("base") || tipo_pos.equals("quad_final") && valor_dado + pos == 5 ||
+                tipo_pos.equals("quad_principal") && valor_dado == 6 && pos == peca.getPosicaoFinal()))
+            return true;
+
+        tela.gerarTela(peca.getCorEscura());
+        return tela.getPerguntaAcertada();
     }
 }

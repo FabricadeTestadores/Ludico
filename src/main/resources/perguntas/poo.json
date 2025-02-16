@@ -138,5 +138,285 @@
     "1": "Declara uma variável global.",
     "2": "Impede a sobrescrita de um método.",
     "3": "Cria um objeto estático."
+  },
+  {
+    "pergunta": "O que é um método abstrato?",
+    "0": "Um método que não tem implementação e deve ser sobrescrito por subclasses.",
+    "1": "Um método que pode ser chamado diretamente sem instanciar a classe.",
+    "2": "Um método que só pode ser usado dentro da própria classe.",
+    "3": "Um método que nunca pode ser sobrescrito."
+  },
+  {
+    "pergunta": "O que é uma variável de instância?",
+    "0": "Uma variável que pertence a um objeto específico.",
+    "1": "Uma variável que pertence a todas as instâncias de uma classe.",
+    "2": "Uma variável local dentro de um método.",
+    "3": "Uma variável que pode ser acessada apenas por métodos estáticos."
+  },
+  {
+    "pergunta": "Qual é o propósito da palavra-chave 'this' em Java?",
+    "0": "Referenciar a própria instância do objeto.",
+    "1": "Criar um novo objeto da mesma classe.",
+    "2": "Definir um método como estático.",
+    "3": "Chamar o construtor da superclasse."
+  },
+  {
+    "pergunta": "O que é um destrutor em POO?",
+    "0": "Um método especial que é chamado quando um objeto é destruído.",
+    "1": "Um método que remove atributos de uma classe.",
+    "2": "Um método que inicializa objetos automaticamente.",
+    "3": "Um método que impede a criação de novas instâncias de uma classe."
+  },
+  {
+    "pergunta": "O que é um getter em POO?",
+    "0": "Um método usado para obter o valor de um atributo privado.",
+    "1": "Um método que modifica um atributo privado.",
+    "2": "Um método que apaga um atributo.",
+    "3": "Um método usado para instanciar uma nova classe."
+  },
+  {
+    "pergunta": "O que é um setter em POO?",
+    "0": "Um método usado para modificar o valor de um atributo privado.",
+    "1": "Um método que impede a modificação de um atributo.",
+    "2": "Um método que remove um objeto da memória.",
+    "3": "Um método usado para acessar atributos protegidos."
+  },
+  {
+    "pergunta": "Qual a principal vantagem da herança?",
+    "0": "Reutilização de código e redução da redundância.",
+    "1": "Permitir múltiplas implementações de interfaces.",
+    "2": "Forçar a implementação de todos os métodos de uma classe pai.",
+    "3": "Evitar o uso de construtores."
+  },
+  {
+    "pergunta": "O que acontece se uma classe implementa uma interface mas não fornece implementação para todos os seus métodos?",
+    "0": "A classe deve ser declarada como abstrata.",
+    "1": "A classe pode ser instanciada normalmente.",
+    "2": "A classe será compilada sem erros, mas lançará exceção em tempo de execução.",
+    "3": "A classe não pode herdar de outra classe."
+  },
+  {
+    "pergunta": "Qual é a principal função do construtor padrão?",
+    "0": "Inicializar um objeto sem exigir parâmetros.",
+    "1": "Criar um método estático.",
+    "2": "Definir a visibilidade de um atributo.",
+    "3": "Impedir a herança de uma classe."
+  },
+  {
+    "pergunta": "Qual a diferença entre associação e composição?",
+    "0": "Na composição, um objeto depende completamente do outro; na associação, não.",
+    "1": "A associação sempre usa herança, enquanto a composição não.",
+    "2": "A composição ocorre apenas em classes abstratas.",
+    "3": "A associação permite múltiplas instâncias, enquanto a composição não."
+  },
+  {
+    "pergunta": "Qual é o efeito de declarar um atributo como 'final'?",
+    "0": "Ele não pode ser modificado após ser inicializado.",
+    "1": "Ele se torna automaticamente público.",
+    "2": "Ele pode ser modificado apenas por métodos estáticos.",
+    "3": "Ele pode ser sobrescrito por subclasses."
+  },
+  {
+    "pergunta": "O que significa a sigla SOLID na programação orientada a objetos?",
+    "0": "Um conjunto de princípios para escrever código limpo e sustentável.",
+    "1": "Uma técnica para compactar arquivos Java.",
+    "2": "Um padrão de nomenclatura para métodos em POO.",
+    "3": "Um tipo especial de herança em Java."
+  },
+  {
+    "pergunta": "Qual o objetivo do princípio da responsabilidade única (SRP) em SOLID?",
+    "0": "Cada classe deve ter apenas uma razão para mudar.",
+    "1": "Permitir que uma classe tenha múltiplas responsabilidades.",
+    "2": "Forçar que todas as classes implementem pelo menos uma interface.",
+    "3": "Garantir que uma classe não possa ser herdada."
+  },
+  {
+    "pergunta": "O que é o princípio de inversão de dependência (DIP) em SOLID?",
+    "0": "Módulos de alto nível não devem depender de módulos de baixo nível, mas de abstrações.",
+    "1": "Classes concretas devem sempre ser usadas ao invés de interfaces.",
+    "2": "Objetos devem ser criados apenas dentro de métodos estáticos.",
+    "3": "Todas as dependências devem ser eliminadas do código."
+  },
+  {
+    "pergunta": "Qual é a função do operador 'instanceof' em Java?",
+    "0": "Verificar se um objeto é uma instância de uma determinada classe.",
+    "1": "Criar um novo objeto a partir de uma classe.",
+    "2": "Converter um tipo de dado em outro.",
+    "3": "Eliminar um objeto da memória."
+  },
+  {
+    "pergunta": "O que significa o princípio do aberto/fechado (OCP) em SOLID?",
+    "0": "Classes devem estar abertas para extensão, mas fechadas para modificação.",
+    "1": "Uma classe não pode ter mais de um método público.",
+    "2": "Todos os atributos de uma classe devem ser públicos.",
+    "3": "Uma classe não pode ser herdada por outras."
+  },
+  {
+    "pergunta": "Qual a vantagem de utilizar interfaces em POO?",
+    "0": "Permitir a criação de código mais flexível e desacoplado.",
+    "1": "Garantir que uma classe só possa ter um método público.",
+    "2": "Evitar a necessidade de construtores.",
+    "3": "Permitir herança múltipla em Java."
+  },
+  {
+    "pergunta": "O que é um método 'default' em uma interface Java?",
+    "0": "Um método que tem uma implementação padrão e pode ser sobrescrito.",
+    "1": "Um método que só pode ser acessado dentro do mesmo pacote.",
+    "2": "Um método que não pode ser sobrescrito.",
+    "3": "Um método que é sempre estático."
+  },
+  {
+    "pergunta": "O que significa coesão em POO?",
+    "0": "O grau em que os elementos de uma classe estão relacionados entre si.",
+    "1": "A capacidade de um objeto herdar de múltiplas classes.",
+    "2": "A prática de dividir uma classe em várias subclasses.",
+    "3": "A utilização de variáveis globais em uma aplicação."
+  },
+  {
+    "pergunta": "O que é um singleton?",
+    "0": "Um padrão de projeto que garante que uma classe tenha apenas uma instância.",
+    "1": "Um tipo especial de herança múltipla.",
+    "2": "Uma classe que pode ser instanciada infinitamente.",
+    "3": "Uma técnica para dividir métodos em partes menores."
+  },
+  {
+    "pergunta": "O que é delegação em POO?",
+    "0": "Um objeto repassa a execução de um método para outro objeto.",
+    "1": "Uma classe herda métodos de outra classe.",
+    "2": "A substituição de um método herdado de uma superclasse.",
+    "3": "O uso de interfaces para evitar herança múltipla."
+  },
+  {
+    "pergunta": "O que é acoplamento em POO?",
+    "0": "O grau de dependência entre classes.",
+    "1": "A capacidade de uma classe reutilizar código de outra.",
+    "2": "A prática de esconder detalhes internos da implementação.",
+    "3": "O processo de dividir uma classe em subclasses menores."
+  },
+  {
+    "pergunta": "O que significa dependência em POO?",
+    "0": "Quando uma classe usa outra classe para funcionar corretamente.",
+    "1": "Quando uma classe herda métodos e atributos de outra.",
+    "2": "Quando uma classe é declarada como final.",
+    "3": "Quando um objeto é criado usando um construtor sem parâmetros."
+  },
+  {
+    "pergunta": "O que é coesão fraca?",
+    "0": "Quando uma classe tem muitas responsabilidades diferentes.",
+    "1": "Quando uma classe tem um único propósito bem definido.",
+    "2": "Quando uma classe tem poucos métodos públicos.",
+    "3": "Quando uma classe não pode ser herdada por outra."
+  },
+  {
+    "pergunta": "O que é um construtor sobrecarregado?",
+    "0": "Um construtor que tem múltiplas versões com diferentes parâmetros.",
+    "1": "Um construtor que pode ser chamado diretamente sem criar um objeto.",
+    "2": "Um construtor que só pode ser usado em classes abstratas.",
+    "3": "Um construtor que impede a criação de objetos."
+  },
+  {
+    "pergunta": "O que significa shadowing em POO?",
+    "0": "Quando um atributo de uma subclasse oculta um atributo da superclasse.",
+    "1": "Quando um método sobrescreve um método da classe pai.",
+    "2": "Quando duas classes possuem métodos com o mesmo nome.",
+    "3": "Quando um objeto substitui outro na memória."
+  },
+  {
+    "pergunta": "O que acontece se não for declarado um construtor em uma classe?",
+    "0": "O compilador cria automaticamente um construtor padrão.",
+    "1": "A classe não poderá ser instanciada.",
+    "2": "Os atributos da classe não poderão ser inicializados.",
+    "3": "Todos os métodos da classe se tornam estáticos."
+  },
+  {
+    "pergunta": "O que significa upcasting em POO?",
+    "0": "Converter um objeto de uma subclasse para um tipo da superclasse.",
+    "1": "Converter um objeto da superclasse para um tipo da subclasse.",
+    "2": "Criar um objeto de uma classe abstrata.",
+    "3": "Impedir que um objeto seja instanciado."
+  },
+  {
+    "pergunta": "O que significa downcasting em POO?",
+    "0": "Converter um objeto da superclasse para um tipo da subclasse.",
+    "1": "Converter um objeto de uma subclasse para um tipo da superclasse.",
+    "2": "Criar uma nova instância de uma classe pai.",
+    "3": "Definir um método como final."
+  },
+  {
+    "pergunta": "O que é um método de fábrica (Factory Method)?",
+    "0": "Um método que encapsula a criação de objetos.",
+    "1": "Um método que impede a herança de classes.",
+    "2": "Um método que sempre retorna um valor nulo.",
+    "3": "Um método usado apenas em interfaces."
+  },
+  {
+    "pergunta": "O que significa a palavra-chave 'volatile' em Java?",
+    "0": "Indica que um atributo pode ser modificado por múltiplas threads.",
+    "1": "Torna um atributo imutável após sua inicialização.",
+    "2": "Impede que um método seja sobrescrito.",
+    "3": "Indica que um método só pode ser executado uma vez."
+  },
+  {
+    "pergunta": "O que é um mixin em POO?",
+    "0": "Uma classe que fornece funcionalidades para outras classes sem ser uma superclasse.",
+    "1": "Um método que pode ser chamado sem instanciar um objeto.",
+    "2": "Uma classe que não pode ser herdada.",
+    "3": "Um tipo especial de construtor."
+  },
+  {
+    "pergunta": "O que acontece se uma classe final for estendida?",
+    "0": "Ocorre um erro de compilação.",
+    "1": "O código compila, mas lança exceção em tempo de execução.",
+    "2": "A classe filha pode ser usada normalmente.",
+    "3": "A classe filha herda apenas os métodos privados."
+  },
+  {
+    "pergunta": "Qual a vantagem do padrão Singleton?",
+    "0": "Garante que apenas uma instância de uma classe seja criada.",
+    "1": "Permite herança múltipla em Java.",
+    "2": "Impede que classes sejam instanciadas diretamente.",
+    "3": "Garante que um objeto possa ser sobrescrito."
+  },
+  {
+    "pergunta": "O que significa o princípio da substituição de Liskov (LSP) em SOLID?",
+    "0": "Subtipos devem ser substituíveis por seus tipos base sem alterar o comportamento do programa.",
+    "1": "Classes devem herdar apenas de uma única superclasse.",
+    "2": "Todos os métodos de uma interface devem ser implementados.",
+    "3": "Objetos só podem ser instanciados através de interfaces."
+  },
+  {
+    "pergunta": "O que é um método protegido (protected) em Java?",
+    "0": "Um método que pode ser acessado por subclasses e classes do mesmo pacote.",
+    "1": "Um método que só pode ser acessado dentro da própria classe.",
+    "2": "Um método que pode ser sobrescrito apenas uma vez.",
+    "3": "Um método que não pode ser sobrescrito."
+  },
+  {
+    "pergunta": "O que é um padrão de projeto?",
+    "0": "Uma solução reutilizável para um problema recorrente de design de software.",
+    "1": "Um modelo fixo de classes que deve ser seguido.",
+    "2": "Um tipo especial de herança.",
+    "3": "Um conjunto de regras obrigatórias de programação."
+  },
+  {
+    "pergunta": "Qual é a principal vantagem da composição sobre a herança?",
+    "0": "A composição promove maior flexibilidade e reutilização de código sem acoplamento forte.",
+    "1": "A composição permite que uma classe herde múltiplos métodos de diferentes classes.",
+    "2": "A composição garante que todas as subclasses implementem os mesmos métodos.",
+    "3": "A composição impede que classes sejam instanciadas diretamente."
+  },
+  {
+    "pergunta": "O que significa o princípio da segregação de interfaces (ISP) em SOLID?",
+    "0": "Uma interface deve conter apenas os métodos que são realmente necessários para seus clientes.",
+    "1": "Todas as interfaces devem ser implementadas por pelo menos uma classe concreta.",
+    "2": "Uma classe deve implementar todas as interfaces de um pacote.",
+    "3": "Interfaces só podem conter métodos estáticos."
+  },
+  {
+    "pergunta": "O que é um método sincronizado (synchronized) em Java?",
+    "0": "Um método que só pode ser acessado por uma thread de cada vez.",
+    "1": "Um método que impede que um objeto seja sobrescrito.",
+    "2": "Um método que é executado automaticamente ao criar um objeto.",
+    "3": "Um método que só pode ser chamado dentro da própria classe."
   }
 ]

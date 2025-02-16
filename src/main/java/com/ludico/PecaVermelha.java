@@ -9,6 +9,10 @@ public class PecaVermelha extends Peca {
         return "vermelho";
     }
 
+    protected String definirCorEscura() {
+        return "#8C0000";
+    }
+
     protected void definirPosicoes() {
         pos_inicial = 2;
         pos_final = 0;

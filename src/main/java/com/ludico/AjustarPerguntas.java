@@ -22,7 +22,7 @@ public class AjustarPerguntas {
         respostas = new String[4][qtd_perguntas];
 
         ajustarPerguntasRespostas(topicos);
-        embaralharPerguntasRespostas();
+        embaralharPerguntas();
     }
 
     private int contarPerguntas(String[] topicos) {
@@ -90,29 +90,34 @@ public class AjustarPerguntas {
         }
     }
 
-    private void embaralharPerguntasRespostas() {
-        int k;
-        String copia;
+    private void embaralharPerguntas() {
+        int i, j;
 
-        for (int i = qtd_perguntas - 1; i > 0; i--) {
-            for (int j = 3; j > 0; j--) {
-                k = (int) (Math.random() * (j + 1));
-                copia = respostas[j][i];
-                respostas[j][i] = respostas[k][i];
-                respostas[k][i] = copia;
-            }
+        for (i = qtd_perguntas - 1; i > 0; i--) {
+            j = (int) (Math.random() * (i + 1));
 
-            k = (int) (Math.random() * (i + 1));
+            embaralharRespostas(respostas, i);
+            trocarValores(perguntas, i, j);
+            trocarValores(resp_corretas, i, j);
+            trocarValores(respostas[0], i, j);
+            trocarValores(respostas[1], i, j);
+            trocarValores(respostas[2], i, j);
+            trocarValores(respostas[3], i, j);
+        }
+    }
 
-            for (int j = 0; j < 4; j++) {
-                copia = respostas[j][i];
-                respostas[j][i] = respostas[j][k];
-                respostas[j][k] = copia;
-            }
+    private void trocarValores(String vetor[], int i, int j) {
+        String copia = vetor[i];
+        vetor[i] = vetor[j];
+        vetor[j] = copia;
+    }
 
-            copia = perguntas[i];
-            perguntas[i] = perguntas[k];
-            perguntas[k] = copia;
+    private void embaralharRespostas(String[][] respostas, int indice) {
+        for (int i = 0; i < 4; i++) {
+            int j = (int) (Math.random() * (i + 1));
+            String copia = respostas[i][indice];
+            respostas[i][indice] = respostas[j][indice];
+            respostas[j][indice] = copia;
         }
     }
 

@@ -49,6 +49,8 @@ public class TelaInicial extends Application {
                         .map(hbox -> ((Label) hbox.getChildren().get(1)).getText())
                         .toList().toArray(new String[0]);
 
+                organizarTopicos();
+                TelaPerguntas.instanciar(this.topicos);
                 stage.close();
                 escolherQtdJogadores();
             }
@@ -109,7 +111,6 @@ public class TelaInicial extends Application {
 
         confirmar.setOnAction(e -> {
             cor_inicial = comboBoxCores.getValue().toLowerCase();
-            organizarTopicos();
             gerarJogadores();
             stage.close();
             Main.iniciarJogo(topicos, jogs);

@@ -25,8 +25,7 @@ public class Main {
         Platform.runLater(() -> {
             Scene scene = new Scene(root, largura, altura);
             Stage stage = new Stage();
-            TelaPerguntas tela = new TelaPerguntas(topicos);
-            InicioJogo inicio_jogo = new InicioJogo(tela, jogs);
+            InicioJogo inicio_jogo = new InicioJogo(jogs);
             Movimento.instanciar().setJogadores(jogs);
 
             stage.setScene(scene);
@@ -38,7 +37,10 @@ public class Main {
     }
 
     public static void finalizarJogo(Jogador jog) {
+        Stage stage = new Stage();
+        FimJogo fim_de_jogo = new FimJogo(jog.getCor().toUpperCase(), jog.getCorClara());
 
+        fim_de_jogo.start(stage);
     }
 
     public static void main(String[] args) {

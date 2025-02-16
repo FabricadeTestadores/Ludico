@@ -8,11 +8,11 @@ import javafx.scene.layout.Pane;
 public abstract class Peca {
     protected Tabuleiro tabuleiro = Tabuleiro.instanciar();
     protected boolean jogada_finalizada = true, jogar_dnv = false;
-    protected int tempo_espera, pos_atual, pos_inicial, pos_final;
+    protected int pos_atual, pos_inicial, pos_final;
     protected float x_base, y_base, largura = Main.getLargura(), altura = Main.getAltura();
     protected float[] x_finais, y_finais;
     protected Pane root = Main.getRoot();
-    protected String tipo_pos = "base", cor = definirCor();
+    protected String tipo_pos = "base", cor = definirCor(), cor_escura = definirCorEscura();
     protected ImageView img;
     protected Image img_sem_fundo, img_com_fundo;
     protected Button btn = new Button();
@@ -27,6 +27,8 @@ public abstract class Peca {
     }
 
     protected abstract String definirCor();
+
+    protected abstract String definirCorEscura();
 
     protected abstract void definirPosicoes();
 
@@ -67,14 +69,6 @@ public abstract class Peca {
             btn.setDisable(false);
         else
             btn.setDisable(true);
-    }
-
-    public void setTempoEspera(int tempo_espera) {
-        this.tempo_espera = tempo_espera;
-    }
-
-    public int getTempoEspera() {
-        return tempo_espera;
     }
 
     public void setJogarNovamente(boolean jogar_dnv) {
@@ -156,5 +150,9 @@ public abstract class Peca {
 
     public String getCor() {
         return cor;
+    }
+
+    public String getCorEscura() {
+        return cor_escura;
     }
 }

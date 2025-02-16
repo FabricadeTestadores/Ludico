@@ -1,21 +1,25 @@
 package com.ludico;
 
+import javafx.application.Platform;
 import javafx.stage.Stage;
 
 public class InicioJogo {
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
+    private static int tempo_espera = 500;
     private int indice, qtd_jogs;
-    private TelaPerguntas tela;
     private Peca peca;
     private Jogador jog;
     private Jogador[] jogs;
 
-    public InicioJogo(TelaPerguntas tela, Jogador[] jogs) {
-        this.tela = tela;
+    public InicioJogo(Jogador[] jogs) {
         this.jogs = jogs;
 
         qtd_jogs = jogs.length;
         indice = qtd_jogs - 1;
+    }
+
+    public static void setTempoEspera(int tempo_espera) {
+        InicioJogo.tempo_espera = tempo_espera;
     }
 
     public void comecarLoopPrincipal(Stage stage) {
@@ -29,6 +33,7 @@ public class InicioJogo {
                 esperar(100);
 
             if (!jog.verificarJogadasDisponiveis()) {
+                verificarJogarNovamente(tabuleiro.getValorDado());
                 esperar(500);
                 continue;
             }
@@ -37,7 +42,7 @@ public class InicioJogo {
             peca = getPecaEscolhida();
             jog.ativarBotoes(false);
 
-            esperar(peca.getTempoEspera());
+            esperar(tempo_espera);
             peca.getImagem().setViewOrder(0f);
 
             if (jog.verificarGanhou())
@@ -45,9 +50,12 @@ public class InicioJogo {
 
             verificarJogarNovamente(tabuleiro.getValorDado());
         }
+        esperar(750);
 
-        stage.close();
-        Main.finalizarJogo(jog);
+        Platform.runLater(() -> {
+            stage.close();
+            Main.finalizarJogo(jog);
+        });
     }
 
     private void esperar(int time) {
@@ -59,7 +67,15 @@ public class InicioJogo {
     }
 
     private void verificarJogarNovamente(int valor_dado) {
-        if (valor_dado == 6 || peca.getJogarNovamente()) {
+        if (valor_dado == 6) {
+            --indice;
+            return;
+        }
+
+        if (peca == null)
+            return;
+
+        if (peca.getJogarNovamente()) {
             peca.setJogarNovamente(false);
             --indice;
         }
