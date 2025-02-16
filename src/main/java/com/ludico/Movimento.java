@@ -42,6 +42,7 @@ public class Movimento {
         int valor_dado = tabuleiro.getValorDado();
         this.peca = peca;
         this.peca.setJogadaFinalizada(false);
+        this.peca.getImagem().setViewOrder(-1);
 
         if (peca.getTipoPosicao().equals("base")) {
             sairDaBase();
@@ -56,16 +57,16 @@ public class Movimento {
 
     private void moverImagem(float tempo, float dx, float dy, ImageView img) {
         TranslateTransition mover = new TranslateTransition(Duration.seconds(tempo), img);
-        mover.setToX(dx);
-        mover.setToY(dy);
+        mover.setByX(dx);
+        mover.setByY(dy);
         mover.setCycleCount(1);
         mover.play();
     }
 
     private void moverBotao(float tempo, float dx, float dy, Button btn) {
         TranslateTransition mover = new TranslateTransition(Duration.seconds(tempo), btn);
-        mover.setToX(dx);
-        mover.setToY(dy);
+        mover.setByX(dx);
+        mover.setByY(dy);
         mover.setCycleCount(1);
         mover.play();
     }
@@ -99,6 +100,7 @@ public class Movimento {
 
             dx = peca.getXFinal(5) - peca.getXFinal(4);
             dy = peca.getYFinal(5) - peca.getYFinal(4);
+            peca.setJogarNovamente(true);
             peca.setTipoPosicao("linha_chegada");
         } else if (tipo_pos.equals("quad_final")) {
             dx = peca.getXFinal(pos + 1) - peca.getXFinal(pos);
@@ -114,10 +116,6 @@ public class Movimento {
             dy = y_principais[(pos + 1) % 52] - y_principais[pos];
             peca.setPosicao((pos + 1) % 52);
         }
-
-        System.out.println("Posição Atual: " + pos);
-        System.out.println("Tipo de Posição: " + tipo_pos);
-        System.out.println("dx: " + dx + ", dy: " + dy);
 
         moverImagem(0.25f, dx, dy, img);
         moverBotao(0.25f, dx, dy, btn);

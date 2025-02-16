@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main {
-    private static float largura = 960f, altura = largura / 1.5f;
+    private static float largura = 800f, altura = largura / 1.5f;
     private static Pane root = new Pane();
 
     public static float getLargura() {

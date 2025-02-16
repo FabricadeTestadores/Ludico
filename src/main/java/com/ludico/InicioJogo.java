@@ -38,6 +38,7 @@ public class InicioJogo {
             jog.ativarBotoes(false);
 
             esperar(peca.getTempoEspera());
+            peca.getImagem().setViewOrder(0f);
 
             if (jog.verificarGanhou())
                 break;
