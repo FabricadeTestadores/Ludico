@@ -5,6 +5,9 @@ import javafx.stage.Stage;
 
 public class InicioJogo {
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
+    private TelaPerguntas tela = TelaPerguntas.instanciar(null);
+    private EncontroPecas encontro = EncontroPecas.instanciar();
+    private Movimento mov = Movimento.instanciar();
     private static Peca peca_atacada = null;
     private static int tempo_espera = 500;
     private int indice, qtd_jogs;
@@ -16,6 +19,7 @@ public class InicioJogo {
         this.jogs = jogs;
         qtd_jogs = jogs.length;
         indice = qtd_jogs - 1;
+        encontro.criarQuadradosPrincipais(qtd_jogs);
     }
 
     public static void setPecaAtacada(Peca peca_atacada) {
@@ -45,11 +49,34 @@ public class InicioJogo {
             peca = getPecaEscolhida();
             jog.ativarBotoes(false);
             esperar(tempo_espera);
+            /*tempo_espera = 0;
+            Peca[] pecas = encontro.getPecas();
 
-            if (peca_atacada != null) {
-                peca_atacada = null;
+            if (!peca.getTipoPosicao().equals("base") && pecas != null) {
+                if (peca_atacada != null) {
+                    tela.gerarTela(peca.getCorEscura());
+
+                    if (tela.getPerguntaAcertada()) {
+                        encontro.adicionarPeca(peca);
+                        encontro.limparPeca(pecas, peca_atacada);
+                        encontro.ordenarPecas(pecas);
+                        encontro.contarPecas(pecas, peca);
+                        encontro.ajustarImagem(pecas);
+                    } else {
+                        peca_atacada = peca;
+                    }
+
+                    mov.moverSemPulo(peca_atacada);
+                    peca_atacada = null;
+                } else {
+                    encontro.adicionarPeca(peca);
+                    encontro.contarPecas(pecas, peca);
+                    encontro.ajustarImagem(pecas);
+                    encontro.ativarBloqueioOuNao();
+                }
             }
 
+            esperar(tempo_espera);*/
             peca.getImagem().setViewOrder(0f);
 
             if (jog.verificarGanhou())

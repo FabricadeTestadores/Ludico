@@ -11,7 +11,7 @@ public class Movimento {
     private static Movimento instancia;
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
     private Peca peca;
-    private EncontroPecas encontro = new EncontroPecas();
+    private EncontroPecas encontro = EncontroPecas.instanciar();
     private TelaPerguntas tela = TelaPerguntas.instanciar(null);
     private boolean linha_chegada;
     private float constante = Main.getLargura() * 0.003f;
@@ -44,16 +44,17 @@ public class Movimento {
         }
 
         peca.setJogadaFinalizada(false);
+        peca.ajeitarImagem();
         peca.getImagem().setViewOrder(-1);
 
-        if (!linha_chegada)
-            valor_dado = encontro.analisarEncontro(peca.getJogador(), peca, valor_dado);
-
         if (peca.getTipoPosicao().equals("base")) {
+            //encontro.encontroBase(peca.getJogador(), peca);
             sairDaBase();
         } else {
-            InicioJogo.setTempoEspera(250 + 500 * valor_dado);
+            //if (!linha_chegada)
+                //valor_dado = encontro.analisarEncontro(peca.getJogador(), peca, valor_dado);
 
+            InicioJogo.setTempoEspera(250 + 500 * valor_dado);
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5f), e -> moverComPulo()));
             timeline.setCycleCount(valor_dado);
             timeline.play();
@@ -128,6 +129,7 @@ public class Movimento {
     }
 
     public void moverSemPulo(Peca peca) {
+        peca.ajeitarImagem();
         peca.getImagem().setViewOrder(-1f);
         peca.setTipoPosicao("base");
 
