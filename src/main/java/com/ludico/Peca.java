@@ -5,6 +5,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+import java.util.Objects;
+
 public abstract class Peca {
     protected Tabuleiro tabuleiro = Tabuleiro.instanciar();
     protected boolean jogada_finalizada = true, jogar_dnv = false;
@@ -16,11 +18,12 @@ public abstract class Peca {
     protected ImageView img;
     protected Image img_sem_fundo, img_com_fundo;
     protected Button btn = new Button();
+    protected Jogador jog;
 
-    public Peca(float x_base, float y_base) {
+    public Peca(float x_base, float y_base, Jogador jog) {
         this.x_base = x_base;
         this.y_base = y_base;
-
+        this.jog = jog;
         definirPosicoes();
         definirImagens();
         definirBotao();
@@ -37,8 +40,8 @@ public abstract class Peca {
             String caminho1 = String.format("/imagens/peca_%s.png", cor);
             String caminho2 = String.format("/imagens/peca_%s-fundo_prata.png", cor);
 
-            img_sem_fundo = new Image(getClass().getResource(caminho1).toExternalForm());
-            img_com_fundo = new Image(getClass().getResource(caminho2).toExternalForm());
+            img_sem_fundo = new Image(Objects.requireNonNull(getClass().getResource(caminho1)).toExternalForm());
+            img_com_fundo = new Image(Objects.requireNonNull(getClass().getResource(caminho2)).toExternalForm());
             img = new ImageView(img_sem_fundo);
             img.setFitWidth(largura / 24f);
             img.setFitHeight(altura / 16f);
@@ -154,5 +157,19 @@ public abstract class Peca {
 
     public String getCorEscura() {
         return cor_escura;
+    }
+
+    public Jogador getJogador() {
+        return jog;
+    }
+
+    public void setImagem(Image img) {
+        this.img.setImage(img);
+    }
+
+    public void ajeitarImagem() {
+        img.setImage(img_sem_fundo);
+        img.setVisible(true);
+        img.setViewOrder(0f);
     }
 }

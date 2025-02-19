@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 
 public class InicioJogo {
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
+    private static Peca peca_atacada = null;
     private static int tempo_espera = 500;
     private int indice, qtd_jogs;
     private Peca peca;
@@ -13,9 +14,12 @@ public class InicioJogo {
 
     public InicioJogo(Jogador[] jogs) {
         this.jogs = jogs;
-
         qtd_jogs = jogs.length;
         indice = qtd_jogs - 1;
+    }
+
+    public static void setPecaAtacada(Peca peca_atacada) {
+        InicioJogo.peca_atacada = peca_atacada;
     }
 
     public static void setTempoEspera(int tempo_espera) {
@@ -33,7 +37,6 @@ public class InicioJogo {
                 esperar(100);
 
             if (!jog.verificarJogadasDisponiveis()) {
-                verificarJogarNovamente(tabuleiro.getValorDado());
                 esperar(500);
                 continue;
             }
@@ -41,8 +44,12 @@ public class InicioJogo {
             jog.ativarBotoes(true);
             peca = getPecaEscolhida();
             jog.ativarBotoes(false);
-
             esperar(tempo_espera);
+
+            if (peca_atacada != null) {
+                peca_atacada = null;
+            }
+
             peca.getImagem().setViewOrder(0f);
 
             if (jog.verificarGanhou())
@@ -58,24 +65,16 @@ public class InicioJogo {
         });
     }
 
-    private void esperar(int time) {
+    private void esperar(int tempo) {
         try {
-            Thread.sleep(time);
+            Thread.sleep(tempo);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
     private void verificarJogarNovamente(int valor_dado) {
-        if (valor_dado == 6) {
-            --indice;
-            return;
-        }
-
-        if (peca == null)
-            return;
-
-        if (peca.getJogarNovamente()) {
+        if (valor_dado == 6 || peca.getJogarNovamente()) {
             peca.setJogarNovamente(false);
             --indice;
         }

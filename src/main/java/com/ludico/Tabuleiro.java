@@ -14,7 +14,6 @@ public class Tabuleiro {
     public static Tabuleiro instanciar() {
         if (instancia == null)
             instancia = new Tabuleiro();
-
         return instancia;
     }
 

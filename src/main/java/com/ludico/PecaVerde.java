@@ -1,8 +1,8 @@
 package com.ludico;
 
 public class PecaVerde extends Peca {
-    public PecaVerde(float x_base, float y_base) {
-        super(x_base, y_base);
+    public PecaVerde(float x_base, float y_base, Jogador jog) {
+        super(x_base, y_base, jog);
     }
 
     protected String definirCor() {

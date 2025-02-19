@@ -9,16 +9,15 @@ import java.util.Objects;
 public abstract class Jogador {
     protected int indice_img = 0;
     protected float largura = Main.getLargura();
-    protected String cor = definirCor(), cor_clara = definirCorClara(), cor_escura = definirCorEscura();
+    protected String cor = definirCor(), cor_clara = definirCorClara();
     protected Pane root = Main.getRoot();
     protected Peca[] pecas = gerarPecas();
+    protected Peca[][] quads_ocupados = new Peca[6][4];
     protected ImageView[] imgs_chegada = gerarImagensChegada();
 
     protected abstract String definirCor();
 
     protected abstract String definirCorClara();
-
-    protected abstract String definirCorEscura();
 
     protected abstract Peca[] gerarPecas();
 
@@ -92,7 +91,7 @@ public abstract class Jogador {
         return cor_clara;
     }
 
-    public String getCorEscura() {
-        return cor_escura;
+    public Peca[][] getQuadradosOcupados() {
+        return quads_ocupados;
     }
 }

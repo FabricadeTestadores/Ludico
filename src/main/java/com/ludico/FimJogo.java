@@ -21,7 +21,7 @@ public class FimJogo extends Application {
 
     public void start(Stage primaryStage) {
         Text mensagem = new Text("JOGADOR " + cor + " VENCEU!");
-        mensagem.setFont(new Font(largura / 16f));
+        mensagem.setFont(new Font(largura / 18f));
         mensagem.setFill(Color.web(corHexadecimal));
         mensagem.setEffect(new DropShadow(10, Color.BLACK));
 

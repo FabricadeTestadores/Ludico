@@ -26,7 +26,6 @@ public class Main {
             Scene scene = new Scene(root, largura, altura);
             Stage stage = new Stage();
             InicioJogo inicio_jogo = new InicioJogo(jogs);
-            Movimento.instanciar().setJogadores(jogs);
 
             stage.setScene(scene);
             stage.setResizable(false);

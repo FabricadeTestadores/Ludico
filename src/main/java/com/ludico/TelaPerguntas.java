@@ -32,7 +32,6 @@ public class TelaPerguntas {
     public static TelaPerguntas instanciar(String[] topicos) {
         if (instancia == null)
             instancia = new TelaPerguntas(topicos);
-
         return instancia;
     }
 
