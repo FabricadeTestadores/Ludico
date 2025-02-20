@@ -11,8 +11,7 @@ public class Movimento {
     private EncontroPecas encontro;
     private Peca peca;
     private TelaPerguntas tela = TelaPerguntas.instanciar(null);
-    private boolean linha_chegada;
-    private float constante = Main.getLargura() * 0.003f;
+    private float constante = Main.getLargura() * 0.000007f;
     private float[] x_principais = tabuleiro.getXQuadradosPrincipais(), y_principais = tabuleiro.getYQuadradosPrincipais();
 
     private Movimento() {
@@ -32,30 +31,23 @@ public class Movimento {
         if (!peca.getJogadaDisponivel())
             return;
 
+        this.peca = peca;
         int valor_dado = tabuleiro.getValorDado(), pos = peca.getPosicao();
         String tipo_pos = peca.getTipoPosicao();
-        this.peca = peca;
 
-        linha_chegada = tipo_pos.equals("quad_final") && valor_dado + pos == 5 ||
-                tipo_pos.equals("quad_principal") && valor_dado == 6 && pos == peca.getPosicaoFinal();
-
-        if (!verificarAcertouPergunta(tipo_pos)) {
+        if (!verificarAcertouPergunta(valor_dado, pos, tipo_pos)) {
             InicioJogo.setTempoEspera(500);
             peca.setJogadaFinalizada(false);
             return;
         }
 
         peca.setJogadaFinalizada(false);
+        peca.getImagem().setViewOrder(-1);
 
         if (peca.getTipoPosicao().equals("base")) {
             sairDaBase();
         } else {
-            if (tipo_pos.equals("quad_principal") && !linha_chegada)
-                valor_dado = encontro.verificarBloqueio(valor_dado, pos, peca.getPosicaoFinal(), peca.getCor());
-            if (valor_dado > 0)
-                encontro.removerPeca(peca.getJogador(), peca);
-
-            peca.getImagem().setViewOrder(-1);
+            encontro.removerPeca(peca.getJogador(), peca);
             InicioJogo.setTempoEspera(250 + 500 * valor_dado);
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5f), e -> moverComPulo()));
             timeline.setCycleCount(valor_dado);
@@ -136,11 +128,18 @@ public class Movimento {
 
         float dx = peca.getXBase() - x_principais[peca.getPosicao()];
         float dy = peca.getYBase() - y_principais[peca.getPosicao()];
-        float tempo = (float) Math.sqrt(dx * dx + dy * dy) * constante;
+        float tempo = (float) (Math.sqrt(dx * dx + dy * dy) * constante);
 
         moverImagem(tempo, dx, dy, peca.getImagem());
         moverBotao(tempo, dx, dy, peca.getBotao());
-        InicioJogo.setTempoEspera((int) (tempo * 1000f + 250f));
+
+        try {
+            Thread.sleep((int) (tempo * 1000f + 250f));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        peca.getImagem().setViewOrder(0f);
     }
 
     private void animarPeca(ImageView img) {
@@ -162,8 +161,9 @@ public class Movimento {
         peca.getImagem().setOpacity(0f);
     }
 
-    private boolean verificarAcertouPergunta(String tipo_pos) {
-        if (!(tipo_pos.equals("base") || linha_chegada))
+    private boolean verificarAcertouPergunta(int valor_dado, int pos, String tipo_pos) {
+        if (!(tipo_pos.equals("base") || tipo_pos.equals("quad_final") && valor_dado + pos == 5 ||
+                tipo_pos.equals("quad_principal") && valor_dado == 6 && pos == peca.getPosicaoFinal()))
             return true;
 
         tela.gerarTela(peca.getCorEscura());

@@ -6,30 +6,13 @@ public class EncontroPecas {
     @SuppressWarnings("unchecked")
     protected ArrayList<Peca>[] casas_principais = new ArrayList[52];
     private ArrayList<Peca> casa;
-    //private TelaPerguntas tela = TelaPerguntas.instanciar(null);
     private static Movimento mov = Movimento.instanciar();
     private int qtd_pecas_amigas, qtd_pecas_inimigas;
-    private boolean[] bloqueios = new boolean[52];
+    private int[] casas_seguras = {2, 10, 15, 23, 28, 36, 41, 49};
 
     public EncontroPecas() {
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < 52; i++)
             casas_principais[i] = new ArrayList<>();
-            bloqueios[i] = false;
-        }
-    }
-
-    private boolean corDiferente(int pos, String cor) {
-        return !casas_principais[pos].getFirst().getCor().equals(cor);
-    }
-
-    public int verificarBloqueio(int valor_dado, int pos, int pos_final, String cor) {
-        for (int i = 1; i <= valor_dado; i++) {
-            if (bloqueios[(pos + i) % 52] && corDiferente((pos + i) % 52, cor))
-                return i - 1;
-            else if ((pos + i) % 52 == pos_final)
-                return valor_dado;
-        }
-        return valor_dado;
     }
 
     private void adicionarPeca(Peca peca) {
@@ -57,30 +40,24 @@ public class EncontroPecas {
     }
 
     public void verificarAtaque(Jogador jog, Peca peca) {
+        if (peca.getTipoPosicao().equals("base"))
+            return;
+
         definirCasa(jog, peca);
         contarPecas(peca);
 
-        if (verificarSafeZone(peca.getPosicao(), peca.getTipoPosicao())) {
-            adicionarPeca(peca);
-        } else if (qtd_pecas_amigas > 0) {
-            adicionarPeca(peca);
-            bloqueios[peca.getPosicao()] = true;
-        } else if (qtd_pecas_inimigas == 1) {
+        if (!verificarSafeZone(peca) && qtd_pecas_inimigas == 1 && qtd_pecas_amigas == 0)
             comecarAtaque(peca, casa.getFirst());
-        } else {
+        else
             adicionarPeca(peca);
-            bloqueios[peca.getPosicao()] = false;
-        }
     }
 
-    private boolean verificarSafeZone(int pos, String tipo_pos) {
-        int[] casas_seguras = {2, 10, 15, 23, 28, 36, 41, 49};
-
-        if (tipo_pos.equals("quad_final"))
+    private boolean verificarSafeZone(Peca peca) {
+        if (peca.getTipoPosicao().equals("quad_final"))
             return true;
 
         for (int i = 0; i < 8; i++) {
-            if (pos == casas_seguras[i])
+            if (peca.getPosicao() == casas_seguras[i])
                 return true;
         }
 
@@ -100,6 +77,7 @@ public class EncontroPecas {
     }
 
     private void comecarAtaque(Peca peca, Peca peca_atacada) {
+        peca.setJogarNovamente(true);
         removerPeca(peca_atacada);
         adicionarPeca(peca);
         mov.moverSemPulo(peca_atacada);

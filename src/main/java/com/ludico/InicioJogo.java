@@ -23,10 +23,6 @@ public class InicioJogo {
         InicioJogo.tempo_espera = tempo_espera;
     }
 
-    public static int getTempoEspera() {
-        return tempo_espera;
-    }
-
     public void comecarLoopPrincipal(Stage stage) {
         while (true) {
             indice = (indice + 1) % qtd_jogs;
@@ -46,12 +42,7 @@ public class InicioJogo {
             peca = getPecaEscolhida();
             jog.ativarBotoes(false);
             esperar(tempo_espera);
-            tempo_espera = 0;
-
-            if (!peca.getTipoPosicao().equals("base"))
-                encontro.verificarAtaque(jog, peca);
-
-            esperar(tempo_espera);
+            encontro.verificarAtaque(jog, peca);
             peca.getImagem().setViewOrder(0f);
 
             if (jog.verificarGanhou())
