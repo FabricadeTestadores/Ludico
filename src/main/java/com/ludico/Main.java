@@ -21,11 +21,13 @@ public class Main {
         return root;
     }
 
-    public static void iniciarJogo(String[] topicos, Jogador[] jogs) {
+    public static void iniciarJogo(Jogador[] jogs) {
         Platform.runLater(() -> {
             Scene scene = new Scene(root, largura, altura);
             Stage stage = new Stage();
-            InicioJogo inicio_jogo = new InicioJogo(jogs);
+            EncontroPecas encontro = new EncontroPecas();
+            InicioJogo inicio_jogo = new InicioJogo(jogs, encontro);
+            Movimento.instanciar().setEncontroPecas(encontro);
 
             stage.setScene(scene);
             stage.setResizable(false);

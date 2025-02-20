@@ -113,7 +113,7 @@ public class TelaInicial extends Application {
             cor_inicial = comboBoxCores.getValue().toLowerCase();
             gerarJogadores();
             stage.close();
-            Main.iniciarJogo(topicos, jogs);
+            Main.iniciarJogo(jogs);
         });
 
         VBox layout = new VBox(largura / 30f);

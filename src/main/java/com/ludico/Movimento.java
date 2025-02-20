@@ -5,13 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-import java.util.Objects;
-
 public class Movimento {
     private static Movimento instancia;
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
+    private EncontroPecas encontro;
     private Peca peca;
-    private EncontroPecas encontro = EncontroPecas.instanciar();
     private TelaPerguntas tela = TelaPerguntas.instanciar(null);
     private boolean linha_chegada;
     private float constante = Main.getLargura() * 0.003f;
@@ -24,6 +22,10 @@ public class Movimento {
         if (instancia == null)
             instancia = new Movimento();
         return instancia;
+    }
+
+    public void setEncontroPecas(EncontroPecas encontro) {
+        this.encontro = encontro;
     }
 
     public void mover(Peca peca) {
@@ -44,16 +46,16 @@ public class Movimento {
         }
 
         peca.setJogadaFinalizada(false);
-        peca.ajeitarImagem();
-        peca.getImagem().setViewOrder(-1);
 
         if (peca.getTipoPosicao().equals("base")) {
-            //encontro.encontroBase(peca.getJogador(), peca);
             sairDaBase();
         } else {
-            //if (!linha_chegada)
-                //valor_dado = encontro.analisarEncontro(peca.getJogador(), peca, valor_dado);
+            if (tipo_pos.equals("quad_principal") && !linha_chegada)
+                valor_dado = encontro.verificarBloqueio(valor_dado, pos, peca.getPosicaoFinal(), peca.getCor());
+            if (valor_dado > 0)
+                encontro.removerPeca(peca.getJogador(), peca);
 
+            peca.getImagem().setViewOrder(-1);
             InicioJogo.setTempoEspera(250 + 500 * valor_dado);
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5f), e -> moverComPulo()));
             timeline.setCycleCount(valor_dado);
@@ -129,7 +131,6 @@ public class Movimento {
     }
 
     public void moverSemPulo(Peca peca) {
-        peca.ajeitarImagem();
         peca.getImagem().setViewOrder(-1f);
         peca.setTipoPosicao("base");
 
@@ -139,7 +140,7 @@ public class Movimento {
 
         moverImagem(tempo, dx, dy, peca.getImagem());
         moverBotao(tempo, dx, dy, peca.getBotao());
-        InicioJogo.setTempoEspera((int) (tempo * 1000f + 500f));
+        InicioJogo.setTempoEspera((int) (tempo * 1000f + 250f));
     }
 
     private void animarPeca(ImageView img) {

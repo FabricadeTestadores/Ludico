@@ -4,22 +4,47 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Jogador {
+    @SuppressWarnings("unchecked")
+    protected ArrayList<Peca>[] casas = new ArrayList[5];
     protected int indice_img = 0;
     protected float largura = Main.getLargura();
     protected String cor = definirCor(), cor_clara = definirCorClara();
     protected Pane root = Main.getRoot();
     protected Peca[] pecas = gerarPecas();
-    protected Peca[][] quads_ocupados = new Peca[6][4];
     protected ImageView[] imgs_chegada = gerarImagensChegada();
+    protected Image[] imgs_encontro = gerarImagensEncontro();
+
+    public Jogador() {
+        for (int i = 0; i < 5; i++)
+            casas[i] = new ArrayList<>();
+    }
 
     protected abstract String definirCor();
 
     protected abstract String definirCorClara();
 
     protected abstract Peca[] gerarPecas();
+
+    protected Image[] gerarImagensEncontro() {
+        Image[] imgs = new Image[4];
+
+        for (int i = 0; i < 4; i++) {
+            try {
+                imgs[i] = new Image(Objects.requireNonNull(getClass().
+                        getResource("/imagens/final_" + cor + (i + 1) + ".png")).toExternalForm());
+            } catch (NullPointerException e) {
+                System.err.println("Erro: Imagem não encontrada no classpath.");
+            } catch (Exception e) {
+                System.err.println("Erro ao carregar a imagem: " + e.getMessage());
+            }
+        }
+
+        return imgs;
+    }
 
     protected ImageView[] gerarImagensChegada() {
         ImageView[] imgs = new ImageView[4];
@@ -91,7 +116,11 @@ public abstract class Jogador {
         return cor_clara;
     }
 
-    public Peca[][] getQuadradosOcupados() {
-        return quads_ocupados;
+    public ArrayList<Peca> getCasa(int i) {
+        return casas[i];
+    }
+
+    public Image getImgEncontro(int i) {
+        return imgs_encontro[i];
     }
 }

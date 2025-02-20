@@ -16,7 +16,7 @@ public abstract class Peca {
     protected Pane root = Main.getRoot();
     protected String tipo_pos = "base", cor = definirCor(), cor_escura = definirCorEscura();
     protected ImageView img;
-    protected Image img_sem_fundo, img_com_fundo;
+    protected Image img_sem_fundo, img_com_fundo, img_original;
     protected Button btn = new Button();
     protected Jogador jog;
 
@@ -39,9 +39,9 @@ public abstract class Peca {
         try {
             String caminho1 = String.format("/imagens/peca_%s.png", cor);
             String caminho2 = String.format("/imagens/peca_%s-fundo_prata.png", cor);
-
             img_sem_fundo = new Image(Objects.requireNonNull(getClass().getResource(caminho1)).toExternalForm());
             img_com_fundo = new Image(Objects.requireNonNull(getClass().getResource(caminho2)).toExternalForm());
+            img_original = img_sem_fundo;
             img = new ImageView(img_sem_fundo);
             img.setFitWidth(largura / 24f);
             img.setFitHeight(altura / 16f);
@@ -68,10 +68,7 @@ public abstract class Peca {
     }
 
     public void ativarBotao(boolean ativar) {
-        if (ativar)
-            btn.setDisable(false);
-        else
-            btn.setDisable(true);
+        btn.setDisable(!ativar);
     }
 
     public void setJogarNovamente(boolean jogar_dnv) {
@@ -151,10 +148,6 @@ public abstract class Peca {
         return btn;
     }
 
-    public String getCor() {
-        return cor;
-    }
-
     public String getCorEscura() {
         return cor_escura;
     }
@@ -163,13 +156,16 @@ public abstract class Peca {
         return jog;
     }
 
-    public void setImagem(Image img) {
-        this.img.setImage(img);
+    public String getCor() {
+        return cor;
     }
 
-    public void ajeitarImagem() {
+    public void trocarImagem(boolean original, int i) {
+        if (original)
+            img_sem_fundo = img_original;
+        else
+            img_sem_fundo = jog.getImgEncontro(i);
+
         img.setImage(img_sem_fundo);
-        img.setVisible(true);
-        img.setViewOrder(0f);
     }
 }

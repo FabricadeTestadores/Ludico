@@ -5,29 +5,26 @@ import javafx.stage.Stage;
 
 public class InicioJogo {
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
-    private TelaPerguntas tela = TelaPerguntas.instanciar(null);
-    private EncontroPecas encontro = EncontroPecas.instanciar();
-    private Movimento mov = Movimento.instanciar();
-    private static Peca peca_atacada = null;
+    private EncontroPecas encontro;
     private static int tempo_espera = 500;
     private int indice, qtd_jogs;
     private Peca peca;
     private Jogador jog;
     private Jogador[] jogs;
 
-    public InicioJogo(Jogador[] jogs) {
+    public InicioJogo(Jogador[] jogs, EncontroPecas encontro) {
         this.jogs = jogs;
+        this.encontro = encontro;
         qtd_jogs = jogs.length;
         indice = qtd_jogs - 1;
-        encontro.criarQuadradosPrincipais(qtd_jogs);
-    }
-
-    public static void setPecaAtacada(Peca peca_atacada) {
-        InicioJogo.peca_atacada = peca_atacada;
     }
 
     public static void setTempoEspera(int tempo_espera) {
         InicioJogo.tempo_espera = tempo_espera;
+    }
+
+    public static int getTempoEspera() {
+        return tempo_espera;
     }
 
     public void comecarLoopPrincipal(Stage stage) {
@@ -49,34 +46,12 @@ public class InicioJogo {
             peca = getPecaEscolhida();
             jog.ativarBotoes(false);
             esperar(tempo_espera);
-            /*tempo_espera = 0;
-            Peca[] pecas = encontro.getPecas();
+            tempo_espera = 0;
 
-            if (!peca.getTipoPosicao().equals("base") && pecas != null) {
-                if (peca_atacada != null) {
-                    tela.gerarTela(peca.getCorEscura());
+            if (!peca.getTipoPosicao().equals("base"))
+                encontro.verificarAtaque(jog, peca);
 
-                    if (tela.getPerguntaAcertada()) {
-                        encontro.adicionarPeca(peca);
-                        encontro.limparPeca(pecas, peca_atacada);
-                        encontro.ordenarPecas(pecas);
-                        encontro.contarPecas(pecas, peca);
-                        encontro.ajustarImagem(pecas);
-                    } else {
-                        peca_atacada = peca;
-                    }
-
-                    mov.moverSemPulo(peca_atacada);
-                    peca_atacada = null;
-                } else {
-                    encontro.adicionarPeca(peca);
-                    encontro.contarPecas(pecas, peca);
-                    encontro.ajustarImagem(pecas);
-                    encontro.ativarBloqueioOuNao();
-                }
-            }
-
-            esperar(tempo_espera);*/
+            esperar(tempo_espera);
             peca.getImagem().setViewOrder(0f);
 
             if (jog.verificarGanhou())
