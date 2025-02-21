@@ -11,6 +11,7 @@ public class Movimento {
     private EncontroPecas encontro;
     private Peca peca;
     private TelaPerguntas tela = TelaPerguntas.instanciar(null);
+    private boolean pergunta_acertada;
     private float constante = Main.getLargura() * 0.000007f;
     private float[] x_principais = tabuleiro.getXQuadradosPrincipais(), y_principais = tabuleiro.getYQuadradosPrincipais();
 
@@ -31,11 +32,12 @@ public class Movimento {
         if (!peca.getJogadaDisponivel())
             return;
 
-        this.peca = peca;
         int valor_dado = tabuleiro.getValorDado(), pos = peca.getPosicao();
         String tipo_pos = peca.getTipoPosicao();
+        pergunta_acertada = verificarAcertouPergunta(valor_dado, pos, tipo_pos);
+        this.peca = peca;
 
-        if (!verificarAcertouPergunta(valor_dado, pos, tipo_pos)) {
+        if (!pergunta_acertada) {
             InicioJogo.setTempoEspera(500);
             peca.setJogadaFinalizada(false);
             return;
@@ -168,5 +170,9 @@ public class Movimento {
 
         tela.gerarTela(peca.getCorEscura());
         return tela.getPerguntaAcertada();
+    }
+
+    public boolean getPerguntaAcertada() {
+        return pergunta_acertada;
     }
 }

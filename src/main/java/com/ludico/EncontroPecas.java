@@ -40,7 +40,7 @@ public class EncontroPecas {
     }
 
     public void verificarAtaque(Jogador jog, Peca peca) {
-        if (peca.getTipoPosicao().equals("base"))
+        if (peca.getTipoPosicao().equals("base") || peca.getTipoPosicao().equals("linha_chegada") || !mov.getPerguntaAcertada())
             return;
 
         definirCasa(jog, peca);
