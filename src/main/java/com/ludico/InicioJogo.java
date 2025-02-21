@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 public class InicioJogo {
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
     private EncontroPecas encontro;
+    private static Stage stage;
     private static int tempo_espera = 500;
     private int indice, qtd_jogs;
     private Peca peca;
@@ -24,14 +25,18 @@ public class InicioJogo {
     }
 
     public void comecarLoopPrincipal(Stage stage) {
+        InicioJogo.stage = stage;
+
         while (true) {
             indice = (indice + 1) % qtd_jogs;
             jog = jogs[indice];
 
             tabuleiro.ativarBotaoDado(jog.getCorClara());
 
-            while (tabuleiro.getBotaoAtivado())
+            while (tabuleiro.getBotaoAtivado()) {
+                verificarFinalizarPrograma();
                 esperar(100);
+            }
 
             if (!jog.verificarJogadasDisponiveis()) {
                 esperar(500);
@@ -50,7 +55,7 @@ public class InicioJogo {
 
             verificarJogarNovamente(tabuleiro.getValorDado());
         }
-        esperar(750);
+        esperar(500);
 
         Platform.runLater(() -> {
             stage.close();
@@ -76,9 +81,16 @@ public class InicioJogo {
     private Peca getPecaEscolhida() {
         Peca peca;
 
-        while ((peca = jog.getPecaEscolhida()) == null)
+        while ((peca = jog.getPecaEscolhida()) == null) {
+            verificarFinalizarPrograma();
             esperar(100);
+        }
 
         return peca;
+    }
+
+    private void verificarFinalizarPrograma() {
+        if (!stage.isShowing())
+            System.exit(1);
     }
 }

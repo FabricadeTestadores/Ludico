@@ -35,7 +35,7 @@ public abstract class Jogador {
         for (int i = 0; i < 4; i++) {
             try {
                 imgs[i] = new Image(Objects.requireNonNull(getClass().
-                        getResource("/imagens/final_" + cor + (i + 1) + ".png")).toExternalForm());
+                        getResource("/imagens/encontro_" + cor + (i + 1) + ".png")).toExternalForm());
             } catch (NullPointerException e) {
                 System.err.println("Erro: Imagem não encontrada no classpath.");
             } catch (Exception e) {
