@@ -13,9 +13,8 @@ import java.util.List;
 
 public class TelaInicial extends Application {
     private int qtd_jogs;
-    private float largura = Main.getLargura(), altura = Main.getAltura();
+    private final float largura = Main.getLargura(), altura = Main.getAltura();
     private String cor_inicial;
-    private String[] topicos;
     private Jogador[] jogs;
 
     public void start(Stage stage) {
@@ -39,18 +38,17 @@ public class TelaInicial extends Application {
         confirmar.setStyle("-fx-background-color: green; -fx-text-fill: white;");
         confirmar.setOnAction(e -> {
             boolean peloMenosUmSelecionado = checkboxContainers.stream()
-                    .map(hbox -> (CheckBox) hbox.getChildren().get(0))
+                    .map(hbox -> (CheckBox) hbox.getChildren().getFirst())
                     .anyMatch(CheckBox::isSelected);
             if (!peloMenosUmSelecionado) {
                 new Alert(Alert.AlertType.WARNING, "Selecione pelo menos um tópico!", ButtonType.OK).showAndWait();
             } else {
-                this.topicos = checkboxContainers.stream()
-                        .filter(hbox -> ((CheckBox) hbox.getChildren().get(0)).isSelected())
+                String[] topicos_escolhidos = checkboxContainers.stream()
+                        .filter(hbox -> ((CheckBox) hbox.getChildren().getFirst()).isSelected())
                         .map(hbox -> ((Label) hbox.getChildren().get(1)).getText())
                         .toList().toArray(new String[0]);
 
-                organizarTopicos();
-                TelaPerguntas.instanciar(this.topicos);
+                TelaPerguntas.instanciar(topicos_escolhidos);
                 stage.close();
                 escolherQtdJogadores();
             }
@@ -127,30 +125,6 @@ public class TelaInicial extends Application {
         stage.setResizable(false);
         stage.setTitle("Escolha a Cor do Primeiro Jogador");
         stage.show();
-    }
-
-    private void organizarTopicos() {
-        for (int i = 0; i < topicos.length; i++) {
-            switch (topicos[i]) {
-                case "POO":
-                    topicos[i] = "poo";
-                    break;
-                case "Banco de Dados":
-                    topicos[i] = "banco_dados";
-                    break;
-                case "Programação Básica":
-                    topicos[i] = "programacao_basica";
-                    break;
-                case "Criação de Jogos":
-                    topicos[i] = "criacao_jogos";
-                    break;
-                case "Testes de Software":
-                    topicos[i] = "testes_software";
-                    break;
-                default:
-                    topicos[i] = "organizacao_projetos";
-            }
-        }
     }
 
     private void gerarJogadores() {

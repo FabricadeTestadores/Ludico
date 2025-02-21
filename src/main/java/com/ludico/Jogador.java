@@ -70,9 +70,6 @@ public abstract class Jogador {
     }
 
     public void mostrarImagemChegada() {
-        if (indice_img >= 4)
-            return;
-
         imgs_chegada[indice_img].setVisible(true);
         ++indice_img;
     }

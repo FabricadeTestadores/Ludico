@@ -42,7 +42,7 @@ public class Movimento {
         }
 
         peca.setJogadaFinalizada(false);
-        peca.getImagem().setViewOrder(-1);
+        peca.getImagem().setViewOrder(-0.5f);
 
         if (peca.getTipoPosicao().equals("base")) {
             sairDaBase();

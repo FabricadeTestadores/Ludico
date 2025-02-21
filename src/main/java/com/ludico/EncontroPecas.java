@@ -1,14 +1,19 @@
 package com.ludico;
 
+import javafx.application.Platform;
+
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
 public class EncontroPecas {
     @SuppressWarnings("unchecked")
-    protected ArrayList<Peca>[] casas_principais = new ArrayList[52];
+    private ArrayList<Peca>[] casas_principais = new ArrayList[52];
     private ArrayList<Peca> casa;
     private static Movimento mov = Movimento.instanciar();
+    private TelaPerguntas tela = TelaPerguntas.instanciar(null);
     private int qtd_pecas_amigas, qtd_pecas_inimigas;
     private int[] casas_seguras = {2, 10, 15, 23, 28, 36, 41, 49};
+    private boolean pergunta_acertada = true;
 
     public EncontroPecas() {
         for (int i = 0; i < 52; i++)
@@ -23,13 +28,8 @@ public class EncontroPecas {
     public void removerPeca(Jogador jog, Peca peca) {
         definirCasa(jog, peca);
         peca.trocarImagem(true, 0);
-        casa.removeIf(p -> p == peca);
+        casa.remove(peca);
         ajustarImagem();
-    }
-
-    private void removerPeca(Peca peca) {
-        peca.trocarImagem(true, 0);
-        casa.removeIf(p -> p == peca);
     }
 
     private void definirCasa(Jogador jog, Peca peca) {
@@ -76,10 +76,35 @@ public class EncontroPecas {
         }
     }
 
+    private void mostrarTela(String cor) {
+        tela.gerarTela(cor);
+        pergunta_acertada = tela.getPerguntaAcertada();
+    }
+
     private void comecarAtaque(Peca peca, Peca peca_atacada) {
-        peca.setJogarNovamente(true);
-        removerPeca(peca_atacada);
-        adicionarPeca(peca);
+        CountDownLatch latch = new CountDownLatch(1);
+
+        Platform.runLater(() -> {
+            try {
+                mostrarTela(peca.getCorEscura());
+            } finally {
+                latch.countDown();
+            }
+        });
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        if (pergunta_acertada) {
+            peca.setJogarNovamente(true);
+            casa.remove(peca_atacada);
+            adicionarPeca(peca);
+        } else {
+            peca_atacada = peca;
+        }
+
         mov.moverSemPulo(peca_atacada);
     }
 

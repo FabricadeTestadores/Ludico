@@ -122,14 +122,8 @@ public abstract class Peca {
     public boolean getJogadaDisponivel() {
         int valor_dado = tabuleiro.getValorDado();
 
-        if (tipo_pos.equals("linha_chegada"))
-            return false;
-        else if (tipo_pos.equals("base") && valor_dado < 6)
-            return false;
-        else if (tipo_pos.equals("quad_final") && valor_dado + pos_atual > 5)
-            return false;
-        else
-            return true;
+        return !tipo_pos.equals("linha_chegada") && (!tipo_pos.equals("base") || valor_dado >= 6)
+                && (!tipo_pos.equals("quad_final") || valor_dado + pos_atual <= 5);
     }
 
     public void setJogadaFinalizada(boolean jogada_finalizada) {
