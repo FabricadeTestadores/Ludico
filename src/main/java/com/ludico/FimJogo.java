@@ -11,25 +11,24 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class FimJogo extends Application {
-    private float largura = Main.getLargura(), altura = Main.getAltura();
-    private String cor, corHexadecimal;
+    private String cor, cor_hexadecimal;
 
     public FimJogo(String cor, String corHexadecimal) {
         this.cor = cor;
-        this.corHexadecimal = corHexadecimal;
+        this.cor_hexadecimal = corHexadecimal;
     }
 
     public void start(Stage primaryStage) {
         Text mensagem = new Text("JOGADOR " + cor + " VENCEU!");
-        mensagem.setFont(new Font(largura / 18f));
-        mensagem.setFill(Color.web(corHexadecimal));
+        mensagem.setFont(new Font(22f));
+        mensagem.setFill(Color.web(cor_hexadecimal));
         mensagem.setEffect(new DropShadow(10, Color.BLACK));
 
-        Rectangle fundo = new Rectangle(largura, altura, Color.BLACK);
+        Rectangle fundo = new Rectangle(400, 300, Color.BLACK);
         fundo.setOpacity(0.7);
 
         StackPane root = new StackPane(fundo, mensagem);
-        Scene scene = new Scene(root, largura, altura);
+        Scene scene = new Scene(root, 400, 300);
 
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);

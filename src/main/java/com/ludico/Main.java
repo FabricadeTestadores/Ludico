@@ -6,8 +6,17 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main {
+    private static boolean modo_perguntas;
     private static float largura = 800f, altura = largura / 1.5f;
     private static Pane root = new Pane();
+
+    public static void setModoPerguntas(boolean modo_perguntas) {
+        Main.modo_perguntas = modo_perguntas;
+    }
+
+    public static boolean getModoPerguntas() {
+        return modo_perguntas;
+    }
 
     public static float getLargura() {
         return largura;

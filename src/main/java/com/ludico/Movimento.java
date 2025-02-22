@@ -7,11 +7,12 @@ import javafx.util.Duration;
 
 public class Movimento {
     private static Movimento instancia;
+    private boolean modo_perguntas = Main.getModoPerguntas();
     private Tabuleiro tabuleiro = Tabuleiro.instanciar();
     private EncontroPecas encontro;
     private Peca peca;
     private TelaPerguntas tela = TelaPerguntas.instanciar(null);
-    private boolean pergunta_acertada;
+    private boolean pergunta_acertada = true;
     private float constante = Main.getLargura() * 0.000007f;
     private float[] x_principais = tabuleiro.getXQuadradosPrincipais(), y_principais = tabuleiro.getYQuadradosPrincipais();
 
@@ -32,10 +33,12 @@ public class Movimento {
         if (!peca.getJogadaDisponivel())
             return;
 
+        this.peca = peca;
         int valor_dado = tabuleiro.getValorDado(), pos = peca.getPosicao();
         String tipo_pos = peca.getTipoPosicao();
-        pergunta_acertada = verificarAcertouPergunta(valor_dado, pos, tipo_pos);
-        this.peca = peca;
+
+        if (modo_perguntas)
+            pergunta_acertada = verificarAcertouPergunta(valor_dado, pos, tipo_pos);
 
         if (!pergunta_acertada) {
             InicioJogo.setTempoEspera(500);

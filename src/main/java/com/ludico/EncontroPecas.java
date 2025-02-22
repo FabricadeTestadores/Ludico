@@ -11,6 +11,7 @@ public class EncontroPecas {
     private ArrayList<Peca> casa;
     private static Movimento mov = Movimento.instanciar();
     private TelaPerguntas tela = TelaPerguntas.instanciar(null);
+    private boolean modo_perguntas = Main.getModoPerguntas();
     private int qtd_pecas_amigas, qtd_pecas_inimigas;
     private int[] casas_seguras = {2, 10, 15, 23, 28, 36, 41, 49};
     private boolean pergunta_acertada = true;
@@ -40,24 +41,27 @@ public class EncontroPecas {
     }
 
     public void verificarAtaque(Jogador jog, Peca peca) {
-        if (peca.getTipoPosicao().equals("base") || peca.getTipoPosicao().equals("linha_chegada") || !mov.getPerguntaAcertada())
+        int pos = peca.getPosicao();
+        String tipo_pos = peca.getTipoPosicao();
+
+        if (tipo_pos.equals("base") || tipo_pos.equals("linha_chegada") || !mov.getPerguntaAcertada())
             return;
 
         definirCasa(jog, peca);
         contarPecas(peca);
 
-        if (!verificarSafeZone(peca) && qtd_pecas_inimigas == 1 && qtd_pecas_amigas == 0)
+        if (!verificarSafeZone(pos, tipo_pos) && qtd_pecas_inimigas == 1 && qtd_pecas_amigas == 0)
             comecarAtaque(peca, casa.getFirst());
         else
             adicionarPeca(peca);
     }
 
-    private boolean verificarSafeZone(Peca peca) {
-        if (peca.getTipoPosicao().equals("quad_final"))
+    private boolean verificarSafeZone(int pos, String tipo_pos) {
+        if (tipo_pos.equals("quad_final"))
             return true;
 
         for (int i = 0; i < 8; i++) {
-            if (peca.getPosicao() == casas_seguras[i])
+            if (pos == casas_seguras[i])
                 return true;
         }
 
@@ -82,19 +86,21 @@ public class EncontroPecas {
     }
 
     private void comecarAtaque(Peca peca, Peca peca_atacada) {
-        CountDownLatch latch = new CountDownLatch(1);
+        if (modo_perguntas) {
+            CountDownLatch latch = new CountDownLatch(1);
 
-        Platform.runLater(() -> {
+            Platform.runLater(() -> {
+                try {
+                    mostrarTela(peca.getCorEscura());
+                } finally {
+                    latch.countDown();
+                }
+            });
             try {
-                mostrarTela(peca.getCorEscura());
-            } finally {
-                latch.countDown();
+                latch.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        });
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 
         if (pergunta_acertada) {

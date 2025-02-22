@@ -1,6 +1,7 @@
 package com.ludico;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,11 +14,66 @@ import java.util.List;
 
 public class TelaInicial extends Application {
     private int qtd_jogs;
-    private final float largura = Main.getLargura(), altura = Main.getAltura();
+    private final float largura = Main.getLargura();
     private String cor_inicial;
     private Jogador[] jogs;
+    private Regras regras = new Regras();
 
-    public void start(Stage stage) {
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Lúdico Game");
+        Button btnComecar = new Button("Começar");
+        Button btnRegras = new Button("Regras");
+
+        btnComecar.setStyle("-fx-font-size: 10pt; -fx-padding: 10px 20px;");
+        btnRegras.setStyle("-fx-font-size: 10pt; -fx-padding: 10px 20px;");
+
+        btnRegras.setOnAction(e -> Platform.runLater(() -> regras.start(new Stage())));
+        btnComecar.setOnAction(e -> {
+            primaryStage.close();
+            telaModoPerguntas();
+        });
+
+        VBox layout = new VBox(15);
+        layout.setAlignment(Pos.CENTER);
+        layout.getChildren().addAll(btnComecar, btnRegras);
+
+        Scene scene = new Scene(layout, 400, 300);
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
+    private void telaModoPerguntas() {
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Escolha uma opção");
+        Button btnComPerguntas = new Button("Com Perguntas");
+        Button btnSemPerguntas = new Button("Sem Perguntas");
+
+        btnComPerguntas.setOnAction(e -> {
+            Main.setModoPerguntas(true);
+            primaryStage.close();
+            perguntarTopicos();
+        });
+
+        btnSemPerguntas.setOnAction(e -> {
+            Main.setModoPerguntas(false);
+            primaryStage.close();
+            escolherQtdJogadores();
+        });
+
+        VBox layout = new VBox(15);
+        layout.setAlignment(Pos.CENTER);
+        layout.getChildren().addAll(btnComPerguntas, btnSemPerguntas);
+
+        Scene scene = new Scene(layout, 400, 300);
+        primaryStage.setTitle("Defina o modo perguntas:");
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
+    private void perguntarTopicos() {
+        Stage stage = new Stage();
         String[] topicos = {"POO", "Banco de Dados", "Programação Básica",
                 "Criação de Jogos", "Testes de Software", "Organização de Projetos"};
 

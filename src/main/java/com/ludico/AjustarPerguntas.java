@@ -16,6 +16,9 @@ public class AjustarPerguntas {
     private String[][] respostas;
 
     public AjustarPerguntas(String[] topicos) {
+        if (topicos == null)
+            topicos = new String[]{"Organização de Projetos"};
+
         qtd_perguntas = contarPerguntas(topicos);
         perguntas = new String[qtd_perguntas];
         resp_corretas = new String[qtd_perguntas];
