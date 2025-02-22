@@ -60,7 +60,7 @@ public class TelaInicial extends Application {
         layout.setStyle("-fx-padding: 20;");
         layout.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(layout, largura, altura);
+        Scene scene = new Scene(layout, 400, 300);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.setTitle("Escolha os Tópicos:");
@@ -89,7 +89,7 @@ public class TelaInicial extends Application {
         layout.setStyle("-fx-padding: 20;");
         layout.setAlignment(javafx.geometry.Pos.CENTER);
 
-        Scene scene = new Scene(layout, largura, altura);
+        Scene scene = new Scene(layout, 400, 300);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.setTitle("Escolha a Quantidade de Jogadores");
@@ -119,7 +119,7 @@ public class TelaInicial extends Application {
         layout.setStyle("-fx-padding: 20;");
         layout.setAlignment(javafx.geometry.Pos.CENTER);
 
-        Scene scene = new Scene(layout, largura, altura);
+        Scene scene = new Scene(layout, 400, 300);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.setResizable(false);
