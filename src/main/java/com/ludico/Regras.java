@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Regras extends Application {
-    @Override
+
     public void start(Stage primaryStage) {
         String regrasTexto = "\u0002Regras do Lúdico\u0002\n\n"
                 + "1. \u0002Objetivo do Jogo\u0002\n"
@@ -26,15 +26,17 @@ public class Regras extends Application {
                 + "   - As peças avançam no sentido horário de acordo com o valor do dado.\n\n"
                 + "4. \u0002Captura de Peças\u0002\n"
                 + "   - Se uma peça parar em uma casa ocupada por uma peça adversária fora da zona segura, a peça adversária é capturada e retorna para a base.\n\n"
-                + "5. \u0002Bônus de Chegada\u0002\n"
+                + "5. \u0002Casas Seguras\u0002\n"
+                + "   - As casas seguras são aquelas que são coloridas ou marcadas com uma estrela.\n"
+                + "   - Peças posicionadas em casas seguras não podem ser capturadas.\n\n"
+                + "6. \u0002Bônus de Chegada\u0002\n"
                 + "   - Se um jogador colocar uma de suas peças na linha de chegada, ele tem direito a uma nova jogada.\n\n"
-                + "6. \u0002Modo Perguntas\u0002\n"
+                + "7. \u0002Modo Perguntas\u0002\n"
                 + "   - Para sair da base, colocar uma peça na linha de chegada ou capturar uma peça adversária, o jogador deve responder corretamente uma pergunta de computação.\n"
                 + "   - Se tentar capturar uma peça e errar a pergunta, a própria peça do jogador é eliminada.\n\n"
-                + "7. \u0002Finalização do Jogo\u0002\n"
+                + "8. \u0002Finalização do Jogo\u0002\n"
                 + "   - Para vencer, um jogador deve levar suas quatro peças até a zona final.\n"
-                + "   - O jogo continua até que um jogador complete esse objetivo.\n\n"
-                + "Essas regras garantem uma partida justa e desafiadora para todos os jogadores.";
+                + "   - O jogo continua até que um jogador complete esse objetivo.";
 
         TextArea textArea = new TextArea(regrasTexto);
         textArea.setWrapText(true);
