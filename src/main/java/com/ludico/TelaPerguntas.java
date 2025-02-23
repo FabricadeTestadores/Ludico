@@ -14,7 +14,7 @@ public class TelaPerguntas {
     private static TelaPerguntas instancia;
     private boolean pergunta_acertada;
     private int indice_pergunta = 0, num_perguntas;
-    private float largura = Main.getLargura() * 0.75f, altura = Main.getAltura() * 0.75f;
+    private float largura = Main.getLargura(), altura = Main.getAltura();
     private Stage stage;
     private String resposta = null;
     private String[] perguntas, resp_corretas;
@@ -65,7 +65,8 @@ public class TelaPerguntas {
                     cor);
 
             btn_respostas[i] = new Button();
-            btn_respostas[i].setFont(Font.font(largura / 50f));
+            btn_respostas[i].setFont(Font.font(largura / 75f));
+            btn_respostas[i].setWrapText(true);
             btn_respostas[i].setPrefSize(largura * 0.8f, altura * 0.1f);
             btn_respostas[i].setLayoutX(largura / 10f);
             btn_respostas[i].setLayoutY(y_botao);
